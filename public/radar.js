@@ -39,8 +39,8 @@
       _ref = this.array;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         i = _ref[_i];
-        x = this.grades[i - 1].x[c];
-        y = this.grades[i - 1].y[c];
+        x = this.grades[i.score - 1].x[c];
+        y = this.grades[i.score - 1].y[c];
         points.push({
           x: x,
           y: y
@@ -60,8 +60,7 @@
       _results = [];
       for (i = 0, _len = _ref.length; i < _len; i++) {
         a = _ref[i];
-        console.log('a', a, 'i', i);
-        _results.push(text = this.obj.text(textPolygon.x[i], textPolygon.y[i], a));
+        _results.push(text = this.obj.text(textPolygon.x[i], textPolygon.y[i], a.label));
       }
       return _results;
     };

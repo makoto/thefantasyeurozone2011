@@ -25,8 +25,8 @@ class Radar
     c = 0
     points = []
     for i in @array
-      x = @grades[i - 1].x[c]
-      y = @grades[i - 1].y[c]
+      x = @grades[i.score - 1].x[c]
+      y = @grades[i.score - 1].y[c]
       points.push {x:x, y:y}
       c++
 
@@ -36,7 +36,7 @@ class Radar
   drawText: ->
     textPolygon = new Polygon(100, 100, 10 * 6, 6);
     for a, i in @array
-      text = @obj.text textPolygon.x[i], textPolygon.y[i], a
+      text = @obj.text textPolygon.x[i], textPolygon.y[i], a.label
     
 window.Radar = Radar
     

@@ -76,4 +76,11 @@ h1 span.star{
   opacity: 1;
 }
 
+/* Work around because Chrome changes svg color for a:visited into black*/
+#countries svg:hover{
+  cursor:pointer;
+}
 
+#countries a{
+ text-decoration: none;
+}

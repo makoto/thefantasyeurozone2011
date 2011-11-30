@@ -31,6 +31,7 @@
     for (_j = 0, _len2 = countries.length; _j < _len2; _j++) {
       country = countries[_j];
       if (country.isEuroZone === "y") {
+        $("#countries span#" + country.code).addClass('active');
         for (attr in country) {
           if (typeof aggregate[attr] === "undefined") {
             aggregate[attr] = 0;

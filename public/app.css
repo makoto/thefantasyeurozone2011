@@ -66,3 +66,14 @@ h1 span.star{
 #footer{
 /*  border-top: 1px solid white;*/
 }
+
+
+#countries span{
+  opacity: 0.5;
+}
+
+#countries span.active{
+  opacity: 1;
+}
+
+

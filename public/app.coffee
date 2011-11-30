@@ -20,7 +20,9 @@ $(document).ready ->
     countries.push c
 
   aggregate = {}
+
   for country in countries when country.isEuroZone == "y"
+    $("#countries span##{country.code}").addClass('active')
     for attr of country
      aggregate[attr] = 0 if typeof(aggregate[attr]) == "undefined"
      aggregate[attr] = aggregate[attr] + parseFloat(country[attr])

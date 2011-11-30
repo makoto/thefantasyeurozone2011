@@ -6,7 +6,7 @@
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       i = _ref[_i];
       c = new Country(i);
-      $('#countries').append("<span id='" + c.code + "'></span>");
+      $('#countries').append("<span title=" + c.name + " id='" + c.code + "'></span>");
       new Radar(Raphael(c.code, 100, 100), [
         {
           score: c.deficitGrade,

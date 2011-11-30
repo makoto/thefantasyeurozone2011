@@ -54,8 +54,8 @@
       }
       mark = this.obj.path(this.path(points));
       return mark.attr({
-        fill: "#C2B821",
-        stroke: "#fcb85c"
+        fill: "#E34528",
+        stroke: "#E34528"
       });
     };
     Radar.prototype.drawText = function() {

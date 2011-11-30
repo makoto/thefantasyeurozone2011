@@ -6,7 +6,7 @@ div {
 }
 
 h1{
-  border: 2px solid #C2B821;
+  border: 2px solid #FCDC28;
   width: 420px;
   background-color: #16617F;
   color: white;
@@ -23,9 +23,11 @@ h1 span.fantasy{
 }
 
 h1 span.star{
- color: #C2B821; 
+ color: #FCDC28; 
 }
 
+
+/*"#E34528", stroke: "#fcb85c"})*/
 
 *{
   color: white;

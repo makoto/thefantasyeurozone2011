@@ -34,7 +34,7 @@ class Radar
       c++
 
     mark = @obj.path @path points
-    mark.attr({fill: "#C2B821", stroke: "#fcb85c"})
+    mark.attr({fill: "#E34528", stroke: "#E34528"})
 
   drawText: ->
     textPolygon = new Polygon(@centerX, @centerY, @range * 6, 6);

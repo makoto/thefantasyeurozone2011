@@ -11,19 +11,25 @@
       this.radiansOffset = this.degreesToRadians(270);
       this.lengthSide = 20;
     }
-    Polygon.prototype.positions = function() {
+    Polygon.prototype.setPositions = function() {
       var angle, i, _results;
       _results = [];
       for (i = 0; i <= 4; i++) {
         angle = this.radiansOffset + i * 2 * Math.PI / 5;
         this.x[i] = this.xCenter + this.radius * Math.cos(angle);
-        this.y[i] = this.yCenter + this.radius * Math.sin(angle);
-        console.log('x', this.x[i]);
-        _results.push(console.log('y', this.y[i]));
+        _results.push(this.y[i] = this.yCenter + this.radius * Math.sin(angle));
       }
       return _results;
     };
-    Polygon.prototype.draw = function() {};
+    Polygon.prototype.path = function() {
+      var i, p;
+      this.setPositions();
+      p = "M" + this.x[0] + " " + this.y[0];
+      for (i = 1; i <= 4; i++) {
+        p = p + ("L" + this.x[i] + " " + this.y[i]);
+      }
+      return p = p + ("L" + this.x[0] + " " + this.y[0]);
+    };
     Polygon.prototype.radiansToDegrees = function(radians) {
       return (360 * radians) / (2 * Math.PI);
     };

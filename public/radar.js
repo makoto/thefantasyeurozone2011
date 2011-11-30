@@ -1,10 +1,11 @@
 (function() {
   var Radar;
   Radar = (function() {
-    function Radar(obj, array, country) {
+    function Radar(obj, array, country, totalGrade) {
       this.obj = obj;
       this.array = array;
       this.country = country;
+      this.totalGrade = totalGrade;
       this.grades = [];
       this.centerX = this.obj.width / 2;
       this.centerY = this.obj.height / 2;
@@ -14,7 +15,8 @@
       this.drawLines();
       this.drawPoints();
       this.drawText();
-      return this.drawCountryCode();
+      this.drawCountryCode();
+      return this.drawTotalGrade();
     };
     Radar.prototype.path = function(points) {
       var i, p;
@@ -71,6 +73,17 @@
     };
     Radar.prototype.drawCountryCode = function() {
       return this.obj.text(this.centerX, this.centerY, this.country);
+    };
+    Radar.prototype.drawTotalGrade = function() {
+      var text;
+      text = this.obj.text(this.centerX * 1.70, this.centerY * 0.30, this.totalGrade);
+      return text.attr({
+        fill: "#E34528"
+      });
+    };
+    Radar.prototype.drawFlag = function() {
+      var flag;
+      return flag = this.obj.image('http://www.bitvertiser.com/emos/country-flags/britain.png', this.centerX * 0.27, this.centerY * 0.27, 20, 20);
     };
     return Radar;
   })();

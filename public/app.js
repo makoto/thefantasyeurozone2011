@@ -1,6 +1,6 @@
 (function() {
   $(document).ready(function() {
-    var country, i, _i, _len, _ref, _results;
+    var c, i, _i, _len, _ref, _results;
     new Radar(Raphael('aggregates', 330, 330), [
       {
         score: 4,
@@ -23,26 +23,25 @@
     _results = [];
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       i = _ref[_i];
-      country = new Country(i);
-      console.log(country.name);
+      c = new Country(i);
       _results.push(new Radar(Raphael('france', 100, 100), [
         {
-          score: i[8],
-          label: i[3]
+          score: c.deficitGrade,
+          label: c.deficit
         }, {
-          score: i[9],
-          label: i[4]
+          score: c.debtGrade,
+          label: c.debt
         }, {
-          score: i[10],
-          label: i[5]
+          score: c.yieldGrade,
+          label: c.yield
         }, {
-          score: i[11],
-          label: i[6]
+          score: c.unemploymentGrade,
+          label: c.unemployment
         }, {
-          score: i[12],
-          label: i[7]
+          score: c.gdpGrade,
+          label: c.gdp
         }
-      ], i[1]).draw());
+      ], c.code, c.totalGrade()).draw());
     }
     return _results;
   });

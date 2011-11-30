@@ -1,6 +1,6 @@
 class Radar
 
-  constructor: (@obj, @array, @country) ->
+  constructor: (@obj, @array, @country, @totalGrade) ->
     @grades = []
     @centerX = @obj.width / 2
     @centerY = @obj.height / 2
@@ -10,6 +10,8 @@ class Radar
     @drawPoints()
     @drawText()
     @drawCountryCode()
+    @drawTotalGrade()
+    # @drawFlag()
 
   path: (points) ->
     p = "M#{points[0].x} #{points[0].y}"
@@ -43,6 +45,14 @@ class Radar
 
   drawCountryCode: ->
       @obj.text @centerX, @centerY, @country
+
+  drawTotalGrade: ->
+      text = @obj.text @centerX * 1.70 , @centerY * 0.30, @totalGrade
+      text.attr({fill: "#E34528"})
+
+  drawFlag: ->
+      flag = @obj.image 'http://www.bitvertiser.com/emos/country-flags/britain.png', @centerX * 0.27 , @centerY * 0.27, 20,20
+
 
 window.Radar = Radar
     

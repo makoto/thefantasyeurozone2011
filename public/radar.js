@@ -29,7 +29,7 @@
         polygon = new Polygon(this.centerX, this.centerY, this.range * i, 5);
         outline = this.obj.path(polygon.path());
         outline.attr({
-          stroke: 'green'
+          stroke: 'white'
         });
         _results.push(this.grades.push(polygon));
       }

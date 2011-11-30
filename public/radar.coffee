@@ -20,7 +20,7 @@ class Radar
     for i in [1..5]
       polygon = new Polygon(@centerX, @centerY, @range * i, 5);
       outline = @obj.path polygon.path();
-      outline.attr({stroke:'green'})
+      outline.attr({stroke:'white'})
       @grades.push polygon
     
   drawPoints: ->

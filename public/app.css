@@ -1,11 +1,41 @@
+body{
+  background-color: #528413;
+}
 div {
-  border: 1px solid #999;
+/*  border: 1px solid white;*/
 }
 
+h1{
+  border: 2px solid #C2B821;
+  width: 420px;
+  background-color: #16617F;
+  color: white;
+  text-align: center;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+h1 span.fantasy{
+  font-family: 'Niconne', cursive;
+}
+
+h1 span.star{
+ color: #C2B821; 
+}
+
+
+*{
+  color: white;
+  font-family: Arial, "MS Trebuchet", sans-serif;
+}
+
+#header{
+/*  border-bottom: 1px solid white;*/
+}
 #middle{
   width:100%;
-  background-color:red; 
-  display: inline-block; 
+  display: inline-block;
+  background-color: #67A816;
+  border: 1px solid white;
 }
 
 #middle #left{
@@ -16,8 +46,14 @@ div {
 #middle #main{
   width:50%;
   float: left;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
 }
 
 #middle #right{
   float: left;
+}
+
+#footer{
+/*  border-top: 1px solid white;*/
 }

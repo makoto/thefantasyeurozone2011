@@ -1,6 +1,6 @@
 class Radar
 
-  constructor: (@obj, @array) ->
+  constructor: (@obj, @array, @country) ->
     @grades = []
     @centerX = @obj.width / 2
     @centerY = @obj.height / 2
@@ -9,6 +9,7 @@ class Radar
     @drawLines()
     @drawPoints()
     @drawText()
+    @drawCountryCode()
 
   path: (points) ->
     p = "M#{points[0].x} #{points[0].y}"
@@ -39,6 +40,9 @@ class Radar
     textPolygon = new Polygon(@centerX, @centerY, @range * 6, 6);
     for a, i in @array
       text = @obj.text textPolygon.x[i], textPolygon.y[i], a.label
-    
+
+  drawCountryCode: ->
+      @obj.text @centerX, @centerY, @country
+
 window.Radar = Radar
     

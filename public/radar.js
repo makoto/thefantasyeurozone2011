@@ -1,9 +1,10 @@
 (function() {
   var Radar;
   Radar = (function() {
-    function Radar(obj, array) {
+    function Radar(obj, array, country) {
       this.obj = obj;
       this.array = array;
+      this.country = country;
       this.grades = [];
       this.centerX = this.obj.width / 2;
       this.centerY = this.obj.height / 2;
@@ -12,7 +13,8 @@
     Radar.prototype.draw = function() {
       this.drawLines();
       this.drawPoints();
-      return this.drawText();
+      this.drawText();
+      return this.drawCountryCode();
     };
     Radar.prototype.path = function(points) {
       var i, p;
@@ -66,6 +68,9 @@
         _results.push(text = this.obj.text(textPolygon.x[i], textPolygon.y[i], a.label));
       }
       return _results;
+    };
+    Radar.prototype.drawCountryCode = function() {
+      return this.obj.text(this.centerX, this.centerY, this.country);
     };
     return Radar;
   })();

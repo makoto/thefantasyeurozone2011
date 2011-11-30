@@ -52,7 +52,7 @@
       }
       mark = this.obj.path(this.path(points));
       return mark.attr({
-        fill: "#fcb85c",
+        fill: "#C2B821",
         stroke: "#fcb85c"
       });
     };

@@ -13,6 +13,10 @@ h1{
   text-align: center;
   -moz-border-radius: 15px;
   border-radius: 15px;
+  margin: 5px;
+}
+h3{
+  margin: 5px;
 }
 h1 span.fantasy{
   font-family: 'Niconne', cursive;
@@ -32,6 +36,7 @@ h1 span.star{
 /*  border-bottom: 1px solid white;*/
 }
 #middle{
+  padding: 0px 5px;
   width:100%;
   display: inline-block;
   background-color: #67A816;
@@ -39,6 +44,7 @@ h1 span.star{
 }
 
 #middle #left{
+  padding: 0px 5px;
   width:25%;
   float: left;
 }
@@ -51,6 +57,7 @@ h1 span.star{
 }
 
 #middle #right{
+  padding: 0px 5px;
   float: left;
 }
 

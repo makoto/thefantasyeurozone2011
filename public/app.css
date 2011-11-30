@@ -1,0 +1,18 @@
+div {
+  border: 1px solid #999;
+}
+
+#middle{
+  width:100%;
+  background-color:red; 
+  display: inline-block; 
+}
+
+#middle #main{
+  width:70%;
+  float: left;
+}
+
+#middle #right{
+  float: left;
+}

@@ -1,5 +1,5 @@
 $(document).ready ->
-  new Radar(Raphael('italy', 320, 200)  , [
+  new Radar(Raphael('italy', 100, 100)  , [
     {score:5, label:'2.4%'},
     {score:4, label:'2.3%'},
     {score:3, label:'2.2%'},
@@ -7,9 +7,17 @@ $(document).ready ->
     {score:1, label:'2.0%'}
   ]).draw()
 
-  new Radar(Raphael('france', 320, 200)  , [
+  new Radar(Raphael('france', 100, 100)  , [
     {score:5, label:'2.4%'},
     {score:5, label:'2.3%'},
+    {score:5, label:'2.2%'},
+    {score:4, label:'2.1%'},
+    {score:5, label:'2.0%'}
+  ]).draw()
+
+  new Radar(Raphael('aggregates', 200, 200)  , [
+    {score:4, label:'2.4%'},
+    {score:2, label:'2.3%'},
     {score:5, label:'2.2%'},
     {score:4, label:'2.1%'},
     {score:5, label:'2.0%'}

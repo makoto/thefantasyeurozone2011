@@ -8,8 +8,13 @@ div {
   display: inline-block; 
 }
 
+#middle #left{
+  width:25%;
+  float: left;
+}
+
 #middle #main{
-  width:70%;
+  width:50%;
   float: left;
 }
 

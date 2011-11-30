@@ -5,6 +5,9 @@
       this.obj = obj;
       this.array = array;
       this.grades = [];
+      this.centerX = this.obj.width / 2;
+      this.centerY = this.obj.height / 2;
+      this.range = this.obj.width / 15;
     }
     Radar.prototype.draw = function() {
       this.drawLines();
@@ -23,7 +26,7 @@
       var i, outline, polygon, _results;
       _results = [];
       for (i = 1; i <= 5; i++) {
-        polygon = new Polygon(100, 100, 10 * i, 5);
+        polygon = new Polygon(this.centerX, this.centerY, this.range * i, 5);
         outline = this.obj.path(polygon.path());
         outline.attr({
           stroke: 'green'
@@ -55,7 +58,7 @@
     };
     Radar.prototype.drawText = function() {
       var a, i, text, textPolygon, _len, _ref, _results;
-      textPolygon = new Polygon(100, 100, 10 * 6, 6);
+      textPolygon = new Polygon(this.centerX, this.centerY, this.range * 6, 6);
       _ref = this.array;
       _results = [];
       for (i = 0, _len = _ref.length; i < _len; i++) {

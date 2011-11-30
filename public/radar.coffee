@@ -2,7 +2,9 @@ class Radar
 
   constructor: (@obj, @array) ->
     @grades = []
-    
+    @centerX = @obj.width / 2
+    @centerY = @obj.height / 2
+    @range = @obj.width / 15
   draw: ->
     @drawLines()
     @drawPoints()
@@ -16,7 +18,7 @@ class Radar
 
   drawLines: ->
     for i in [1..5]
-      polygon = new Polygon(100, 100, 10 * i, 5);
+      polygon = new Polygon(@centerX, @centerY, @range * i, 5);
       outline = @obj.path polygon.path();
       outline.attr({stroke:'green'})
       @grades.push polygon
@@ -34,7 +36,7 @@ class Radar
     mark.attr({fill: "#fcb85c", stroke: "#fcb85c"})
 
   drawText: ->
-    textPolygon = new Polygon(100, 100, 10 * 6, 6);
+    textPolygon = new Polygon(@centerX, @centerY, @range * 6, 6);
     for a, i in @array
       text = @obj.text textPolygon.x[i], textPolygon.y[i], a.label
     

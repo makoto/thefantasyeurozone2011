@@ -1,9 +1,12 @@
 class Radar
 
   constructor: (@obj, @array) ->
+    @grades = []
+    
   draw: ->
     @drawLines()
     @drawPoints()
+    @drawText()
 
   path: (points) ->
     p = "M#{points[0].x} #{points[0].y}"
@@ -12,7 +15,6 @@ class Radar
     p = p + "L#{points[0].x} #{points[0].y}"
 
   drawLines: ->
-    @grades = []
     for i in [1..5]
       polygon = new Polygon(100, 100, 10 * i, 5);
       outline = @obj.path polygon.path();
@@ -31,5 +33,10 @@ class Radar
     mark = @obj.path @path points
     mark.attr({fill: "#fcb85c", stroke: "#fcb85c"})
 
+  drawText: ->
+    textPolygon = new Polygon(100, 100, 10 * 6, 6);
+    for a, i in @array
+      text = @obj.text textPolygon.x[i], textPolygon.y[i], a
+    
 window.Radar = Radar
     

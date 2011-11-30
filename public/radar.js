@@ -4,10 +4,12 @@
     function Radar(obj, array) {
       this.obj = obj;
       this.array = array;
+      this.grades = [];
     }
     Radar.prototype.draw = function() {
       this.drawLines();
-      return this.drawPoints();
+      this.drawPoints();
+      return this.drawText();
     };
     Radar.prototype.path = function(points) {
       var i, p;
@@ -19,7 +21,6 @@
     };
     Radar.prototype.drawLines = function() {
       var i, outline, polygon, _results;
-      this.grades = [];
       _results = [];
       for (i = 1; i <= 5; i++) {
         polygon = new Polygon(100, 100, 10 * i, 5);
@@ -51,6 +52,18 @@
         fill: "#fcb85c",
         stroke: "#fcb85c"
       });
+    };
+    Radar.prototype.drawText = function() {
+      var a, i, text, textPolygon, _len, _ref, _results;
+      textPolygon = new Polygon(100, 100, 10 * 6, 6);
+      _ref = this.array;
+      _results = [];
+      for (i = 0, _len = _ref.length; i < _len; i++) {
+        a = _ref[i];
+        console.log('a', a, 'i', i);
+        _results.push(text = this.obj.text(textPolygon.x[i], textPolygon.y[i], a));
+      }
+      return _results;
     };
     return Radar;
   })();

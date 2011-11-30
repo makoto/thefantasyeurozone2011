@@ -19,11 +19,11 @@
           score: c.deficitGrade,
           label: c.deficit
         }, {
-          score: c.debtGrade,
-          label: c.debt
-        }, {
           score: c.yieldGrade,
           label: c.yield
+        }, {
+          score: c.debtGrade,
+          label: c.debt
         }, {
           score: c.unemploymentGrade,
           label: c.unemployment
@@ -52,14 +52,14 @@
     total = aggregate.debtGrade + aggregate.deficitGrade + aggregate.yieldGrade + aggregate.unemploymentGrade + aggregate.gdpGrade;
     return new Radar(Raphael('aggregates', 330, 330), [
       {
-        score: aggregate.debtGrade,
-        label: "Debt / GDP " + aggregate.debt + "%"
-      }, {
         score: aggregate.deficitGrade,
         label: "Deficit / GDP " + aggregate.deficit + "%"
       }, {
         score: aggregate.yieldGrade,
         label: "10 yr bond yield " + aggregate.yield + "%"
+      }, {
+        score: aggregate.debtGrade,
+        label: "Debt / GDP " + aggregate.debt + "%"
       }, {
         score: aggregate.unemploymentGrade,
         label: "Enemployment " + aggregate.unemployment + "%"

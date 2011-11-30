@@ -11,7 +11,7 @@
 
 ## Bugs
 - handle nul (or delete nul including countries)
-- yield data wrong?
+- NaN on GDP
 
 ## Nice To Have
 - european map (or explanation about each key matrics)

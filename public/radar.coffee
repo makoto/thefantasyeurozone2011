@@ -4,7 +4,7 @@ class Radar
     @grades = []
     @centerX = @obj.width / 2
     @centerY = @obj.height / 2
-    @range = @obj.width / 15
+    @range = @obj.width / 17
   draw: ->
     @drawLines()
     @drawPoints()

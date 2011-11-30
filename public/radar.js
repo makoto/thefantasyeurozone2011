@@ -8,7 +8,7 @@
       this.grades = [];
       this.centerX = this.obj.width / 2;
       this.centerY = this.obj.height / 2;
-      this.range = this.obj.width / 15;
+      this.range = this.obj.width / 17;
     }
     Radar.prototype.draw = function() {
       this.drawLines();

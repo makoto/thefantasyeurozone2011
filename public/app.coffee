@@ -5,7 +5,7 @@ $(document).ready ->
     {score:5, label:'10 yr bond yield 2%'},
     {score:4, label:'Enemployment 2%'},
     {score:5, label:'GDP 2%'}
-  ]).draw()
+  ], '').draw()
   
   for i in [["Belgium", "BE", "y", "-4.1", "4.2", "98.4", "6.7", "17.4"],
    ["Bulgaria", "BG", "n", "-3.1", "5.26", "15.2", "11.9", "26.8"],
@@ -36,7 +36,7 @@ $(document).ready ->
    ["United Kingdom", "GB", "n", "-10.3", "2.52", "80.1", "8.1", "21.2"],
    ["Norway", "NO", "n", "10.6", null, "42.3", "3.2", "8.2"]]
 
-    new Radar(Raphael('france', 90, 90)  , [
+    new Radar(Raphael('france', 100, 100)  , [
       {score:5, label:i[3]},
       {score:5, label:i[4]},
       {score:5, label:i[5]},

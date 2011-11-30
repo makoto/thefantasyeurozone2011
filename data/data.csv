@@ -1,8 +1,3 @@
-geo\time,ISO code,eurozone,"Deficit, % of GDP, 2010","Oct, 10 yr bond yields (lower = better)","Gov debt, % of GDP, Q2 2011",Latest unemploy- ment,Latest 15-24 unemploy- ment
-EU (27 countries),,,-6.6,4.08,80.9,9.7,21.4
-EU (25 countries),,,-6.6
-Euro area (17 countries),,,-6.2,,87.3,10.2,21.2
-Euro area (16 countries),,,-6.3,,87.4,10.2,21.2
 Belgium,BE,y,-4.1,4.2,98.4,6.7,17.4
 Bulgaria,BG,n,-3.1,5.26,15.2,11.9,26.8
 Czech Republic,CZ,n,-4.8,3.14,40.1,6.6,18.8
@@ -30,5 +25,4 @@ Slovakia,SK,y,-7.7,4.33,42.5,13.5,30.7
 Finland,FI,y,-2.5,2.51,45.3,7.8,20.4
 Sweden,SE,n,0.2,1.9,36.8,7.2,22.1
 United Kingdom,GB,n,-10.3,2.52,80.1,8.1,21.2
-Iceland,IS,n,-10.1
 Norway,NO,n,10.6,,42.3,3.2,8.2

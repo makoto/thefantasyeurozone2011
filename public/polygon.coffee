@@ -5,6 +5,7 @@ class Polygon
     @y = [];
     @radiansOffset = @degreesToRadians(270);
     @lengthSide = 20;
+    @setPositions()
     
   setPositions: ->
     for i in [0..4]
@@ -13,7 +14,6 @@ class Polygon
       @y[i] = @yCenter + @radius * Math.sin(angle)
 
   path: ->
-    @setPositions()
     p = "M#{@x[0]} #{@y[0]}"
     for i in [1..4]
       p = p + "L#{@x[i]} #{@y[i]}"

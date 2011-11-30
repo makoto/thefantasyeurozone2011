@@ -10,6 +10,7 @@
       this.y = [];
       this.radiansOffset = this.degreesToRadians(270);
       this.lengthSide = 20;
+      this.setPositions();
     }
     Polygon.prototype.setPositions = function() {
       var angle, i, _results;
@@ -23,7 +24,6 @@
     };
     Polygon.prototype.path = function() {
       var i, p;
-      this.setPositions();
       p = "M" + this.x[0] + " " + this.y[0];
       for (i = 1; i <= 4; i++) {
         p = p + ("L" + this.x[i] + " " + this.y[i]);

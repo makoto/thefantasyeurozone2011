@@ -6,7 +6,8 @@
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       i = _ref[_i];
       c = new Country(i);
-      new Radar(Raphael('france', 100, 100), [
+      $('#countries').append("<span id='" + c.code + "'></span>");
+      new Radar(Raphael(c.code, 100, 100), [
         {
           score: c.deficitGrade,
           label: c.deficit
@@ -29,11 +30,13 @@
     aggregate = {};
     for (_j = 0, _len2 = countries.length; _j < _len2; _j++) {
       country = countries[_j];
-      for (attr in country) {
-        if (typeof aggregate[attr] === "undefined") {
-          aggregate[attr] = 0;
+      if (country.isEuroZone === "y") {
+        for (attr in country) {
+          if (typeof aggregate[attr] === "undefined") {
+            aggregate[attr] = 0;
+          }
+          aggregate[attr] = aggregate[attr] + parseFloat(country[attr]);
         }
-        aggregate[attr] = aggregate[attr] + parseFloat(country[attr]);
       }
     }
     for (attr in aggregate) {

@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Circle</title>
+    <script type="text/javascript" src="d3.js"></script>
+    <script type='text/javascript'>
+    (function() {
+      var w = 10;
+      var h = 10;
+      var x = 5;
+      var y = 5;
+      var data = 'foo';
+      var svg = d3.select("#chart-3").append("svg:svg")
+          .attr("width", w)
+          .attr("height", h);
+
+      var circle = svg.selectAll("circle")
+          .data(data)
+        .enter().append("svg:circle")
+          .attr("class", "little")
+          .attr("cx", x)
+          .attr("cy", y)
+          .attr("r", 12);
+
+      // d3.select("#chart-3 button").on("click", function() {
+        circle.style("fill", "#aaa").attr("r", 12).attr("cy", y);
+        circle.transition().duration(500).delay(0).style("fill", "steelblue");
+        circle.transition().duration(500).delay(500).attr("cy", 90);
+        circle.transition().duration(500).delay(1000).attr("r", 30);
+      // });
+    })();
+    </script>
+  </head>
+  <body>
+    <div class="chart-3">
+      hello
+    </div>
+  </body>
+</html>

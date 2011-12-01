@@ -19,7 +19,7 @@
       $('#countries').empty();
       for (_i = 0, _len = countries.length; _i < _len; _i++) {
         c = countries[_i];
-        $('#countries').append("<span title=" + c.name + " id='" + c.code + "'></span>");
+        $('#countries').append("<span title='" + c.name + "' id='" + c.code + "'></span>");
         new Radar(Raphael(c.code, 100, 100), [
           {
             score: c.deficitGrade,

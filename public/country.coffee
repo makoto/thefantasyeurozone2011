@@ -29,6 +29,10 @@ class Country
         @all().sort (a,b) -> parseFloat(a.gdp) - parseFloat(b.gdp)
       when "best"
         @all().sort (a,b) -> b.totalGrade() - a.totalGrade()
+      when "worst"
+        @all().sort (a,b) -> a.totalGrade() - b.totalGrade()
+
+
     
   @filterBy:(type) ->
     switch type

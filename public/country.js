@@ -55,6 +55,10 @@
           return this.all().sort(function(a, b) {
             return b.totalGrade() - a.totalGrade();
           });
+        case "worst":
+          return this.all().sort(function(a, b) {
+            return a.totalGrade() - b.totalGrade();
+          });
       }
     };
     Country.filterBy = function(type) {

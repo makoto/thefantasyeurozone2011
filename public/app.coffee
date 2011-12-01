@@ -6,5 +6,6 @@ $(document).ready ->
   for i in csv
     Country.add new Country(i)
 
-  countriesView = new CountriesView()
-  aggregateView = new AggregateView()
+  new Countries()
+  new Aggregates()
+  new Categories(el:$('.categories'))

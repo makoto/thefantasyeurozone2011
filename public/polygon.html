@@ -8,12 +8,14 @@
 	<link href='http://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>  
 	<link rel="stylesheet" href="app.css">  
 	<script type="text/javascript" charset="utf-8" src="./jquery.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./spine.js"></script>
 	<script type="text/javascript" charset="utf-8" src="./raphael.js"></script>
 	<script type="text/javascript" charset="utf-8" src="./polygon.js"></script>
 	<script type="text/javascript" charset="utf-8" src="./radar.js"></script>
 	<script type="text/javascript" charset="utf-8" src="./country.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./countries_view.js"></script>
-	<script type="text/javascript" charset="utf-8" src="./aggregate_view.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./countries.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./aggregates.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./categories.js"></script>
 	<script type="text/javascript" charset="utf-8" src="./app.js"></script>
 	<!-- Date: 2011-11-29 -->
 </head>
@@ -45,15 +47,15 @@
       </div>
       <div id="right">
         <h3>Category</h3>
-        <ul>
-          <li><a id="link_to_current" href="#">Current members(17)</a> - Dec 2012</li>
-          <li><a id="link_to_original" href="#">Original members(12)</a> - since 1999</li>
-          <li><a id="link_to_deficit" href="#">Lower Deficit, % of GDP (11)</a> - 2010</li>
-          <li><a id="link_to_debt" href="#">Lower Gov Debt/ GDP (11)</a> -  Q2 2011</li>
-          <li><a id="link_to_yield" href="#">Lower Yield (11)</a> - Oct, 2010 yr bond</li>
-          <li><a id="link_to_unemployment" href="#">Lower Unemployment (11)</a> - Latest</li>
-          <li><a id="link_to_gdp" href="#">Top GDP Growth(11)</a></li>
-          <li><a id="link_to_best" href="#">Best (11)</a></li>
+        <ul class="categories">
+          <li><a id="current" href="#">Current members(17)</a> - Dec 2012</li>
+          <li><a id="original" href="#">Original members(12)</a> - since 1999</li>
+          <li><a id="deficit" href="#">Lower Deficit, % of GDP (11)</a> - 2010</li>
+          <li><a id="debt" href="#">Lower Gov Debt/ GDP (11)</a> -  Q2 2011</li>
+          <li><a id="yield" href="#">Lower Yield (11)</a> - Oct, 2010 yr bond</li>
+          <li><a id="unemployment" href="#">Lower Unemployment (11)</a> - Latest</li>
+          <li><a id="gdp" href="#">Top GDP Growth(11)</a></li>
+          <li><a id="best" href="#">Best (11)</a></li>
         </ul>
       </div>
     </div>

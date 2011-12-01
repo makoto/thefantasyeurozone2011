@@ -1,9 +1,10 @@
-class AggregateView
+class Aggregates extends Spine.Controller
 
   constructor: (args) ->
+    super
     # Filtering
     aggregate = {}
-    for country in Country.all() when country.isEuroZone == "y"
+    for country in Country.filterBy("current")
       $("#countries span##{country.code}").addClass('active')
       for attr of country
        aggregate[attr] = 0 if typeof(aggregate[attr]) == "undefined"
@@ -23,4 +24,4 @@ class AggregateView
       {score:aggregate.gdpGrade,     label:"GDP #{aggregate.gdp}%"}
     ], '', "Total Score: #{total}" ).draw()
 
-window.AggregateView = AggregateView  
+window.Aggregates = Aggregates  

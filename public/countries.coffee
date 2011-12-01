@@ -1,9 +1,8 @@
-class CountriesView
+class Countries extends Spine.Controller
 
   constructor: (args) ->
     # Sort
-    countries = Country.all().sort (a,b) -> b.isEuroZone.localeCompare(a.isEuroZone)
-
+    countries = Country.sortBy("current")
     # Drawining Each Country
     for c in countries
       # a:visited turns svg into black. Happens only on Chrome.
@@ -23,4 +22,4 @@ class CountriesView
         c.totalGrade()
       ).draw()
 
-window.CountriesView = CountriesView  
+window.Countries = Countries 

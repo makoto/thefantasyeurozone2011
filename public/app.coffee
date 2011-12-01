@@ -6,6 +6,7 @@ $(document).ready ->
   for i in csv
     Country.add new Country(i)
 
-  new Countries()
+  new Countries(el:$('#countries'))
+  Aggregate.load Country.filterBy('current')
   new Aggregates()
   new Categories(el:$('.categories'))

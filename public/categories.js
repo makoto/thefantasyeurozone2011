@@ -20,8 +20,12 @@
     Categories.prototype.click = function(event) {
       var type;
       type = event.target.id;
+      Aggregate.load(Country.filterBy(type));
       new Aggregates(type);
-      return new Countries(type);
+      return new Countries({
+        el: $('#countries'),
+        type: type
+      });
     };
     return Categories;
   })();

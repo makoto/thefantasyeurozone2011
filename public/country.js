@@ -17,6 +17,21 @@
     Country.all = function(id) {
       return this.records;
     };
+    Country.findByCode = function(code) {
+      var c;
+      return ((function() {
+        var _i, _len, _ref, _results;
+        _ref = this.all();
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          c = _ref[_i];
+          if (c.code === code) {
+            _results.push(c);
+          }
+        }
+        return _results;
+      }).call(this))[0];
+    };
     Country.add = function(c) {
       return this.records.push(c);
     };

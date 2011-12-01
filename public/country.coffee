@@ -9,6 +9,7 @@ class Country
     total
 
   @all: (id) -> @records
+  @findByCode:(code) -> (c for c in @all() when c.code == code)[0]
   @add: (c) -> @records.push c
   @records: []
   @sortBy:(type) ->

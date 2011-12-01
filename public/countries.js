@@ -10,16 +10,18 @@
   };
   Countries = (function() {
     __extends(Countries, Spine.Controller);
-    function Countries(type) {
-      var c, countries, country, _i, _j, _len, _len2, _ref;
-      if (type == null) {
-        type = "current";
-      }
+    Countries.prototype.events = {
+      "click .country": 'click'
+    };
+    function Countries(opts) {
+      var c, countries, country, type, _i, _j, _len, _len2, _ref;
+      Countries.__super__.constructor.apply(this, arguments);
+      type = (opts && opts.type) || "current";
       countries = Country.sortBy(type);
       $('#countries').empty();
       for (_i = 0, _len = countries.length; _i < _len; _i++) {
         c = countries[_i];
-        $('#countries').append("<span title='" + c.name + "' id='" + c.code + "'></span>");
+        $('#countries').append("<span title='" + c.name + "' id='" + c.code + "' class='country'></span>");
         new Radar(Raphael(c.code, 100, 100), [
           {
             score: c.deficitGrade,
@@ -45,6 +47,13 @@
         $("#countries span#" + country.code).addClass('active');
       }
     }
+    Countries.prototype.click = function(event) {
+      var country;
+      country = $(event.target).parents('.country')[0];
+      $(country).toggleClass('active');
+      Aggregate.addOrDelete(Country.findByCode(country.id));
+      return new Aggregates();
+    };
     return Countries;
   })();
   window.Countries = Countries;

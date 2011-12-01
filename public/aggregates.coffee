@@ -1,16 +1,16 @@
 class Aggregates extends Spine.Controller
 
-  constructor: (type ="current") ->
+  constructor: () ->
     super
     # Filtering
     aggregate = {}
-    for country in Country.filterBy(type)
+    for country in Aggregate.all()
       for attr of country
        aggregate[attr] = 0 if typeof(aggregate[attr]) == "undefined"
        aggregate[attr] = aggregate[attr] + parseFloat(country[attr] || 0)
 
     for attr of aggregate
-      aggregate[attr] = Math.round (aggregate[attr] / (c for c in Country.filterBy(type) ).length)
+      aggregate[attr] = Math.round (aggregate[attr] / (c for c in Aggregate.all()).length)
 
     total = aggregate.debtGrade + aggregate.deficitGrade + aggregate.yieldGrade + aggregate.unemploymentGrade + aggregate.gdpGrade
 

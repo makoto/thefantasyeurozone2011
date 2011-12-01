@@ -10,14 +10,11 @@
   };
   Aggregates = (function() {
     __extends(Aggregates, Spine.Controller);
-    function Aggregates(type) {
+    function Aggregates() {
       var aggregate, attr, c, country, total, _i, _len, _ref;
-      if (type == null) {
-        type = "current";
-      }
       Aggregates.__super__.constructor.apply(this, arguments);
       aggregate = {};
-      _ref = Country.filterBy(type);
+      _ref = Aggregate.all();
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         country = _ref[_i];
         for (attr in country) {
@@ -30,7 +27,7 @@
       for (attr in aggregate) {
         aggregate[attr] = Math.round(aggregate[attr] / ((function() {
           var _j, _len2, _ref2, _results;
-          _ref2 = Country.filterBy(type);
+          _ref2 = Aggregate.all();
           _results = [];
           for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
             c = _ref2[_j];

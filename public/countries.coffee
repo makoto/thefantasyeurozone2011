@@ -1,6 +1,10 @@
 class Countries extends Spine.Controller
+  events:
+    "click .country": 'click'
 
-  constructor: (type ="current") ->
+  constructor: (opts) ->
+    super
+    type = (opts && opts.type) || "current"
     # Sort
     countries = Country.sortBy(type)
     $('#countries').empty()
@@ -8,7 +12,7 @@ class Countries extends Spine.Controller
     for c in countries
       # a:visited turns svg into black. Happens only on Chrome.
       # https://groups.google.com/a/chromium.org/group/chromium-bugs/browse_thread/thread/601e8ebafabf7492/d72a235e2cc41f3e?lnk=raot
-      $('#countries').append("<span title='#{c.name}' id='#{c.code}'></span>")
+      $('#countries').append("<span title='#{c.name}' id='#{c.code}' class='country'></span>")
 
       new Radar(
         Raphael(c.code, 100, 100)
@@ -24,6 +28,12 @@ class Countries extends Spine.Controller
       ).draw()
     for country in Country.filterBy(type)
       $("#countries span##{country.code}").addClass('active')
+
+  click:(event) -> 
+    country = $(event.target).parents('.country')[0]
+    $(country).toggleClass('active')
+    Aggregate.addOrDelete Country.findByCode(country.id)
+    new Aggregates()
 
 
 window.Countries = Countries 

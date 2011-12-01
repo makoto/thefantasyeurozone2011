@@ -14,7 +14,13 @@
       }
       return total;
     };
-    Country.prototype.total = function() {};
+    Country.all = function(id) {
+      return this.records;
+    };
+    Country.add = function(c) {
+      return this.records.push(c);
+    };
+    Country.records = [];
     return Country;
   })();
   window.Country = Country;

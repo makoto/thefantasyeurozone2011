@@ -5,13 +5,12 @@ class Aggregates extends Spine.Controller
     # Filtering
     aggregate = {}
     for country in Country.filterBy(type)
-      # $("#countries span##{country.code}").addClass('active')
       for attr of country
        aggregate[attr] = 0 if typeof(aggregate[attr]) == "undefined"
-       aggregate[attr] = aggregate[attr] + parseFloat(country[attr])
+       aggregate[attr] = aggregate[attr] + parseFloat(country[attr] || 0)
 
     for attr of aggregate
-      aggregate[attr] = Math.round (aggregate[attr] / Country.all().length)
+      aggregate[attr] = Math.round (aggregate[attr] / (c for c in Country.filterBy(type) ).length)
 
     total = aggregate.debtGrade + aggregate.deficitGrade + aggregate.yieldGrade + aggregate.unemploymentGrade + aggregate.gdpGrade
 

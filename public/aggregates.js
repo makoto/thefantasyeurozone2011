@@ -11,7 +11,7 @@
   Aggregates = (function() {
     __extends(Aggregates, Spine.Controller);
     function Aggregates(type) {
-      var aggregate, attr, country, total, _i, _len, _ref;
+      var aggregate, attr, c, country, total, _i, _len, _ref;
       if (type == null) {
         type = "current";
       }
@@ -24,11 +24,20 @@
           if (typeof aggregate[attr] === "undefined") {
             aggregate[attr] = 0;
           }
-          aggregate[attr] = aggregate[attr] + parseFloat(country[attr]);
+          aggregate[attr] = aggregate[attr] + parseFloat(country[attr] || 0);
         }
       }
       for (attr in aggregate) {
-        aggregate[attr] = Math.round(aggregate[attr] / Country.all().length);
+        aggregate[attr] = Math.round(aggregate[attr] / ((function() {
+          var _j, _len2, _ref2, _results;
+          _ref2 = Country.filterBy(type);
+          _results = [];
+          for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
+            c = _ref2[_j];
+            _results.push(c);
+          }
+          return _results;
+        })()).length);
       }
       total = aggregate.debtGrade + aggregate.deficitGrade + aggregate.yieldGrade + aggregate.unemploymentGrade + aggregate.gdpGrade;
       $("#aggregates").empty();

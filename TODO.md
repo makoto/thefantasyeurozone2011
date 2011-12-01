@@ -1,5 +1,6 @@
 ## Must Have
 - add /remove country
+- Add 12 countries
 - Add gdp
 - add "About" page
 - add "Making Of..." page

@@ -31,15 +31,17 @@ class Country
         @all().sort (a,b) -> b.totalGrade() - a.totalGrade()
       when "worst"
         @all().sort (a,b) -> a.totalGrade() - b.totalGrade()
+      when "all"
+        @all()
 
-
-    
   @filterBy:(type) ->
     switch type
       when "current"
         (c for c in @all() when c.isEuroZone == "y")
       when "original"
         (c for c in @all() when c.isOriginalEuroZone == "y")
+      when "all"
+        @all()
       else
         @sortBy(type)[0..10]
 

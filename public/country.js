@@ -59,6 +59,8 @@
           return this.all().sort(function(a, b) {
             return a.totalGrade() - b.totalGrade();
           });
+        case "all":
+          return this.all();
       }
     };
     Country.filterBy = function(type) {
@@ -86,6 +88,8 @@
           }
           return _results2;
           break;
+        case "all":
+          return this.all();
         default:
           return this.sortBy(type).slice(0, 11);
       }

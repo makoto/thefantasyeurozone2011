@@ -15,9 +15,7 @@ class Country
     switch type
       when "current"
         @all().sort (a,b) -> b.isEuroZone.localeCompare(a.isEuroZone)
-      when "current"
-        @all().sort (a,b) -> b.isOriginalEuroZone.localeCompare(a.isOriginalEuroZone)
-      when "current"
+      when "original"
         @all().sort (a,b) -> b.isOriginalEuroZone.localeCompare(a.isOriginalEuroZone)
       when "deficit"
         @all().sort (a,b) -> parseFloat(a.deficit) - parseFloat(b.deficit)
@@ -30,7 +28,7 @@ class Country
       when "gdp"
         @all().sort (a,b) -> parseFloat(a.gdp) - parseFloat(b.gdp)
       when "best"
-        @all().sort (a,b) -> a.totalGrade() - b.totalGrade()
+        @all().sort (a,b) -> b.totalGrade() - a.totalGrade()
     
   @filterBy:(type) ->
     switch type
@@ -38,6 +36,7 @@ class Country
         (c for c in @all() when c.isEuroZone == "y")
       when "original"
         (c for c in @all() when c.isOriginalEuroZone == "y")
-
+      else
+        @sortBy(type)[0..10]
 
 window.Country = Country

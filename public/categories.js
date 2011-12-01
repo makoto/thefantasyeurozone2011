@@ -18,7 +18,10 @@
       Categories.__super__.constructor.apply(this, arguments);
     }
     Categories.prototype.click = function(event) {
-      return console.log(event.target.id);
+      var type;
+      type = event.target.id;
+      new Aggregates(type);
+      return new Countries(type);
     };
     return Categories;
   })();

@@ -7,6 +7,7 @@ class Categories extends Spine.Controller
     super
 
   click: (event) ->
-    console.log event.target.id
-
+    type = event.target.id
+    new Aggregates(type)
+    new Countries(type)
 window.Categories = Categories

@@ -10,14 +10,16 @@
   };
   Aggregates = (function() {
     __extends(Aggregates, Spine.Controller);
-    function Aggregates(args) {
+    function Aggregates(type) {
       var aggregate, attr, country, total, _i, _len, _ref;
+      if (type == null) {
+        type = "current";
+      }
       Aggregates.__super__.constructor.apply(this, arguments);
       aggregate = {};
-      _ref = Country.filterBy("current");
+      _ref = Country.filterBy(type);
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         country = _ref[_i];
-        $("#countries span#" + country.code).addClass('active');
         for (attr in country) {
           if (typeof aggregate[attr] === "undefined") {
             aggregate[attr] = 0;
@@ -29,6 +31,7 @@
         aggregate[attr] = Math.round(aggregate[attr] / Country.all().length);
       }
       total = aggregate.debtGrade + aggregate.deficitGrade + aggregate.yieldGrade + aggregate.unemploymentGrade + aggregate.gdpGrade;
+      $("#aggregates").empty();
       new Radar(Raphael('aggregates', 330, 330), [
         {
           score: aggregate.deficitGrade,

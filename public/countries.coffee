@@ -1,8 +1,9 @@
 class Countries extends Spine.Controller
 
-  constructor: (args) ->
+  constructor: (type ="current") ->
     # Sort
-    countries = Country.sortBy("current")
+    countries = Country.sortBy(type)
+    $('#countries').empty()
     # Drawining Each Country
     for c in countries
       # a:visited turns svg into black. Happens only on Chrome.
@@ -21,5 +22,8 @@ class Countries extends Spine.Controller
         c.code
         c.totalGrade()
       ).draw()
+    for country in Country.filterBy(type)
+      $("#countries span##{country.code}").addClass('active')
+
 
 window.Countries = Countries 

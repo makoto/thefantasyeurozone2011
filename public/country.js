@@ -27,11 +27,7 @@
           return this.all().sort(function(a, b) {
             return b.isEuroZone.localeCompare(a.isEuroZone);
           });
-        case "current":
-          return this.all().sort(function(a, b) {
-            return b.isOriginalEuroZone.localeCompare(a.isOriginalEuroZone);
-          });
-        case "current":
+        case "original":
           return this.all().sort(function(a, b) {
             return b.isOriginalEuroZone.localeCompare(a.isOriginalEuroZone);
           });
@@ -57,7 +53,7 @@
           });
         case "best":
           return this.all().sort(function(a, b) {
-            return a.totalGrade() - b.totalGrade();
+            return b.totalGrade() - a.totalGrade();
           });
       }
     };
@@ -85,6 +81,9 @@
             }
           }
           return _results2;
+          break;
+        default:
+          return this.sortBy(type).slice(0, 11);
       }
     };
     return Country;

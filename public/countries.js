@@ -10,9 +10,13 @@
   };
   Countries = (function() {
     __extends(Countries, Spine.Controller);
-    function Countries(args) {
-      var c, countries, _i, _len;
-      countries = Country.sortBy("current");
+    function Countries(type) {
+      var c, countries, country, _i, _j, _len, _len2, _ref;
+      if (type == null) {
+        type = "current";
+      }
+      countries = Country.sortBy(type);
+      $('#countries').empty();
       for (_i = 0, _len = countries.length; _i < _len; _i++) {
         c = countries[_i];
         $('#countries').append("<span title=" + c.name + " id='" + c.code + "'></span>");
@@ -34,6 +38,11 @@
             label: c.gdp
           }
         ], c.code, c.totalGrade()).draw();
+      }
+      _ref = Country.filterBy(type);
+      for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
+        country = _ref[_j];
+        $("#countries span#" + country.code).addClass('active');
       }
     }
     return Countries;

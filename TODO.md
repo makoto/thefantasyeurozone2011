@@ -1,11 +1,12 @@
 ## Must Have
 
-- add Google Analytics
+- Add Google Analytics
 
 ## Bugs
 
 ## Nice To Have
 - Add GDP comparison with other non european countries
-- european map (or explanation about each key matrics)
-- country flag
-- sorting animation
+- European map (or explanation about each key matrics)
+- URL with state
+- Country flag
+- Corting animation

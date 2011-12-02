@@ -9,7 +9,7 @@ class Barchart
       ['Euro',12174523489431.70]
       ['China',5878629246676.52]
       ['Japan',5497812568085.79]
-      ['Latin America \n& Caribbean',5181851228628.24]
+      ['S America & Caribbean\n',5181851228628.24]
       ['Brazil',2087889553821.68]
       ['Arab World',1908954573177.62]
       ['India',1729010242153.78]
@@ -21,12 +21,12 @@ class Barchart
   draw: ()->
     # EU GDP Total
     gdp = @gdp
-    r = Raphael('comparison', 300, 300)
+    r = Raphael('comparison', 500, 300)
     length = 200
     startY = 20
     w = 20
     x = 80
-    fontSize = 13
+    fontSize = 15
     eu = r.rect(x, startY, w, length)
     eu.attr({ stroke:'#16617F', fill:'white'})
     # Eurozone GDP Total
@@ -42,7 +42,7 @@ class Barchart
     eurozone.attr({'font-size':"#{fontSize}px"})
 
     console.log('sum', sum)
-    eurozone = r.text(x - 45, top, "#{sum.toFixed(2)} - ")
+    eurozone = r.text(x - 45, top, "Eurozone\n#{sum.toFixed(2)}")
     eurozone.attr({'font-size':"#{fontSize}px"})
 
     # Max the rest of the world GDP
@@ -50,7 +50,7 @@ class Barchart
     rtotal = r.rect(x, startY, w, length)
     rtotal.attr({stroke:'#E34528'})
     counter = 0
-    textX = x + 100
+    textX = x + 120
 
     # Each country within the rest of the world GDP
     for c in gdp[1..(gdp.length - 1)]

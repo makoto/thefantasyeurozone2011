@@ -13,7 +13,7 @@
       this.range = this.obj.width / 17;
       this.fontFamily = 'Arial';
       if (this.aggregate) {
-        this.fontSize = 13;
+        this.fontSize = 15;
       } else {
         this.fontSize = 10;
       }

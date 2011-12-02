@@ -5,6 +5,7 @@ div {
 /*  border: 1px solid white;*/
 }
 
+
 h1{
   border: 2px solid #FCDC28;
   width: 500px;
@@ -16,9 +17,6 @@ h1{
   margin: 5px;
   float: left;
 }
-h3{
-  margin: 5px;
-}
 h1 span.fantasy{
   font-family: 'Niconne', cursive;
 }
@@ -26,9 +24,6 @@ h1 span.fantasy{
 h1 span.star{
  color: #FCDC28; 
 }
-
-
-/*"#E34528", stroke: "#fcb85c"})*/
 
 *{
   color: white;
@@ -39,7 +34,14 @@ h1 span.star{
 /*  border-bottom: 1px solid white;*/
  float: left;
 }
+
+#explanation{
+  width:100%;
+  display: inline-block;
+}
+
 #middle{
+  width: 90%;
   padding: 0px 5px;
   margin-right: 3px;
   display: inline-block;
@@ -56,27 +58,30 @@ h1 span.star{
 
 #middle #main{
   text-align: center;
-  width:50%;
+  width:70%;
   float: left;
-  border-right: 1px solid white;
-  border-left: 1px solid white;
 }
 
 #middle .comparison{
-/*  float: right;*/
+  float: none;
 }
 
-#middle #right{
-  padding: 0px 5px;
+
+.column{
+  display: inline-table;
+}
+
+.left{
   float: left;
 }
 
-#right{
-  margin: 5px;
+.right{
+  float: right;
 }
 
+
 #middle ul{
-  padding-left: 20px;
+  padding:0px !important;
 }
 #middle li{
   padding: 2px 0px;

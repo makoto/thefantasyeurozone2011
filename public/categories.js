@@ -22,7 +22,7 @@
       type = event.target.id;
       Aggregate.load(Country.filterBy(type));
       new Aggregates();
-      window.counties.refresh();
+      window.counties.refresh(type);
       $('.categories a').removeClass('selected');
       return $(event.target).addClass('selected');
     };

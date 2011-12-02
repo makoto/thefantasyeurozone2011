@@ -10,7 +10,7 @@ class Categories extends Spine.Controller
     type = event.target.id
     Aggregate.load Country.filterBy(type)
     new Aggregates()
-    window.counties.refresh()
+    window.counties.refresh(type)
 
     $('.categories a').removeClass('selected')
     $(event.target).addClass('selected')

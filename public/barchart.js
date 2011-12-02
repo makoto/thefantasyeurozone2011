@@ -2,14 +2,14 @@
   var Barchart;
   Barchart = (function() {
     function Barchart(gdp) {
-      this.gdp = [['EU', 16250328209821.20], ['E Asia & Pacific', 16219266890205.30], ['N America', 16162456051801.20], ['USA', 14582400000000.00], ['Euro', 12174523489431.70], ['China', 5878629246676.52], ['Japan', 5497812568085.79], ['S America & Caribbean\n', 5181851228628.24], ['Brazil', 2087889553821.68], ['Arab World', 1908954573177.62], ['India', 1729010242153.78], ['Russian Fed', 1479819314058.23], ['Korea Rep.', 1014483158313.58], ['Switzerland', 523772140978.64]];
+      this.gdp = [['EU', 16250328209821.20, "r"], ['E Asia & Pacific', 16219266890205.30, "r"], ['N America', 16162456051801.20, "r"], ['USA', 14582400000000.00, "c"], ['China', 5878629246676.52, "c"], ['Japan', 5497812568085.79, "c"], ['S America & Caribbean', 5181851228628.24, "r"], ['Brazil', 2087889553821.68, "c"], ['Arab World', 1908954573177.62, "r"], ['India', 1729010242153.78, "c"], ['Russia', 1479819314058.23, "c"], ['S Korea.', 1014483158313.58, "c"], ['Switzerland', 523772140978.64, "c"]];
     }
     Barchart.prototype.draw = function() {
-      var a, bottom, c, counter, eu, eurozone, fontSize, gdp, length, r, ratio, rest, rtotal, s, startY, sum, textX, texts, top, w, x, _i, _j, _len, _len2, _ref, _ref2;
+      var a, bottom, c, counter, currentPos, eu, eurozone, fontSize, gdp, length, prevPos, r, ratio, rest, rtotal, s, startY, sum, textX, texts, top, w, x, _i, _j, _len, _len2, _ref, _ref2;
       gdp = this.gdp;
       r = Raphael('comparison', 500, 300);
       length = 200;
-      startY = 20;
+      startY = 0;
       w = 20;
       x = 80;
       fontSize = 15;
@@ -36,18 +36,17 @@
       eurozone.attr({
         'font-size': "" + fontSize + "px"
       });
-      console.log('sum', sum);
       eurozone = r.text(x - 45, top, "Eurozone\n" + (sum.toFixed(2)));
       eurozone.attr({
         'font-size': "" + fontSize + "px"
       });
-      x = x + 50;
+      x = x + 150;
       rtotal = r.rect(x, startY, w, length);
       rtotal.attr({
         stroke: '#E34528'
       });
-      counter = 0;
-      textX = x + 120;
+      counter = 1;
+      prevPos = 0;
       _ref2 = gdp.slice(1, (gdp.length - 1 + 1) || 9e9);
       for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
         c = _ref2[_j];
@@ -60,23 +59,28 @@
           stroke: '#E34528',
           fill: "hsb(0," + s + ",1)"
         });
-        if (counter < 4 && counter !== 0) {
-          rest = r.text(textX, top, "" + gdp[counter][0] + " " + (this.toBillion(gdp[counter][1])));
-          rest.attr({
-            'font-size': "" + fontSize + "px"
-          });
+        if (c[2] === "c") {
+          textX = x - 50;
+        } else {
+          textX = x + 130;
         }
+        console.log("ddd", c[0], c[2], textX);
+        currentPos = top;
+        console.log('p', prevPos, 'c', currentPos);
+        if (currentPos - prevPos < 10) {
+          console.log('overrapping');
+          currentPos = prevPos + 15;
+        } else {
+          console.log('not overrapping');
+        }
+        rest = r.text(textX, currentPos, "" + gdp[counter][0] + " " + (this.toBillion(gdp[counter][1])));
+        rest.attr({
+          'font-size': "" + fontSize + "px"
+        });
         counter++;
+        prevPos = currentPos;
       }
-      texts = [];
-      for (c = 5; c <= 13; c++) {
-        texts.push("" + gdp[c][0] + " " + (this.toBillion(gdp[c][1])));
-      }
-      texts = texts.join('\n');
-      rest = r.text(textX, length, texts);
-      return rest.attr({
-        'font-size': "" + fontSize + "px"
-      });
+      return texts = [];
     };
     Barchart.prototype.toBillion = function(val) {
       return parseFloat((val / 1000 / 1000 / 1000).toFixed(2));

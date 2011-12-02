@@ -49,23 +49,21 @@ h1 span.star{
 
 #middle #left{
   padding: 0px 5px;
-  width:30%;
+  width:25%;
   float: left;
 }
 
-#middle .column{
-  display: inline-table;
-}
 
 #middle #main{
-  width:40%;
+  text-align: center;
+  width:50%;
   float: left;
   border-right: 1px solid white;
   border-left: 1px solid white;
 }
 
 #middle .comparison{
-  float: right;
+/*  float: right;*/
 }
 
 #middle #right{

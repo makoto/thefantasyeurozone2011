@@ -55,7 +55,7 @@ class Radar
       @obj.text @centerX, @centerY, @country
 
   drawTotalGrade: ->
-      text = @obj.text @centerX * 1.70 , @centerY * 0.30, @totalGrade
+      text = @obj.text @centerX * 0.30 , @centerY * 0.30, @totalGrade
       text.attr({fill: "#FCDC28"})
       # text.attr('font-family': @fontFamily)
       

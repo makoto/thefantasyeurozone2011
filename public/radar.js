@@ -86,7 +86,7 @@
     };
     Radar.prototype.drawTotalGrade = function() {
       var text;
-      text = this.obj.text(this.centerX * 1.70, this.centerY * 0.30, this.totalGrade);
+      text = this.obj.text(this.centerX * 0.30, this.centerY * 0.30, this.totalGrade);
       text.attr({
         fill: "#FCDC28"
       });

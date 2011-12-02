@@ -2,16 +2,17 @@
   var Barchart;
   Barchart = (function() {
     function Barchart(gdp) {
-      this.gdp = [['EU', 16250328209821.20], ['E Asia & P', 16219266890205.30], ['N America', 16162456051801.20], ['USA', 14582400000000.00], ['Euro', 12174523489431.70], ['China', 5878629246676.52], ['Japan', 5497812568085.79], ['S&M America', 5181851228628.24], ['Brazil', 2087889553821.68], ['Arab World', 1908954573177.62], ['India', 1729010242153.78], ['Russian Fed', 1479819314058.23], ['Korea Rep.', 1014483158313.58], ['Switzerland', 523772140978.64]];
+      this.gdp = [['EU', 16250328209821.20], ['E Asia & Pacific', 16219266890205.30], ['N America', 16162456051801.20], ['USA', 14582400000000.00], ['Euro', 12174523489431.70], ['China', 5878629246676.52], ['Japan', 5497812568085.79], ['Latin America \n& Caribbean', 5181851228628.24], ['Brazil', 2087889553821.68], ['Arab World', 1908954573177.62], ['India', 1729010242153.78], ['Russian Fed', 1479819314058.23], ['Korea Rep.', 1014483158313.58], ['Switzerland', 523772140978.64]];
     }
     Barchart.prototype.draw = function() {
       var a, bottom, c, counter, eu, eurozone, gdp, length, r, ratio, rtotal, s, startY, sum, textX, texts, top, w, x, _i, _j, _len, _len2, _ref, _ref2;
       gdp = this.gdp;
-      r = Raphael('comparison', 200, 300);
+      r = Raphael('comparison', 300, 300);
       length = 200;
       startY = 20;
       w = 20;
-      eu = r.rect(30, 20, 20, length);
+      x = 80;
+      eu = r.rect(x, startY, w, length);
       eu.attr({
         stroke: '#16617F',
         fill: 'white'
@@ -26,21 +27,20 @@
       console.log('ratio', ratio);
       top = (length * (1 - ratio)) + startY;
       bottom = length * ratio;
-      x = 30;
       eurozone = r.rect(x, top, w, bottom);
       eurozone.attr({
         fill: '#16617F',
         stroke: '#16617F'
       });
       console.log('sum', sum);
-      r.text(x - 8, top, "" + (sum.toFixed(2)));
-      x = 80;
+      r.text(x - 45, top, "" + (sum.toFixed(2)));
+      x = x + 50;
       rtotal = r.rect(x, startY, w, length);
       rtotal.attr({
         stroke: '#E34528'
       });
       counter = 0;
-      textX = x + 70;
+      textX = x + 90;
       _ref2 = gdp.slice(1, (gdp.length - 1 + 1) || 9e9);
       for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
         c = _ref2[_j];

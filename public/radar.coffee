@@ -1,10 +1,15 @@
 class Radar
 
-  constructor: (@obj, @array, @country, @totalGrade) ->
+  constructor: (@obj, @array, @country, @totalGrade, @aggregate = false) ->
     @grades = []
     @centerX = @obj.width / 2
     @centerY = @obj.height / 2
     @range = @obj.width / 17
+    @fontFamily = 'Arial'
+    if @aggregate
+      @fontSize = 15
+    else
+      @fontSize = 10
   draw: ->
     @drawLines()
     @drawPoints()
@@ -36,19 +41,25 @@ class Radar
       c++
 
     mark = @obj.path @path points
-    mark.attr({fill: "#E34528", stroke: "#E34528"})
+    mark.attr({fill: "#16617F", stroke: "#16617F"})
 
+#E34528 red
+  
   drawText: ->
     textPolygon = new Polygon(@centerX, @centerY, @range * 6, 6);
     for a, i in @array
       text = @obj.text textPolygon.x[i], textPolygon.y[i], a.label
+      text.attr({'font-size':"#{@fontSize}px"})
 
   drawCountryCode: ->
       @obj.text @centerX, @centerY, @country
 
   drawTotalGrade: ->
       text = @obj.text @centerX * 1.70 , @centerY * 0.30, @totalGrade
-      text.attr({fill: "#E34528"})
+      text.attr({fill: "#FCDC28"})
+      # text.attr('font-family': @fontFamily)
+      
+      text.attr({'font-size':"#{@fontSize * 1.2}px"})
 
   drawFlag: ->
       flag = @obj.image 'http://www.bitvertiser.com/emos/country-flags/britain.png', @centerX * 0.27 , @centerY * 0.27, 20,20

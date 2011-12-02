@@ -31,7 +31,11 @@ class Countries extends Spine.Controller
 
   click:(event) -> 
     country = $(event.target).parents('.country')[0]
+    # 
+    #
+    # Fade in/out countries
     $(country).toggleClass('active')
+    # Regenerate aggregates
     Aggregate.addOrDelete Country.findByCode(country.id)
     new Aggregates()
 

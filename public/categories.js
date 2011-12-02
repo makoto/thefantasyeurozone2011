@@ -22,10 +22,12 @@
       type = event.target.id;
       Aggregate.load(Country.filterBy(type));
       new Aggregates(type);
-      return new Countries({
+      new Countries({
         el: $('#countries'),
         type: type
       });
+      $('.categories a').removeClass('selected');
+      return $(event.target).addClass('selected');
     };
     return Categories;
   })();

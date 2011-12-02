@@ -1,15 +1,22 @@
 (function() {
   var Radar;
   Radar = (function() {
-    function Radar(obj, array, country, totalGrade) {
+    function Radar(obj, array, country, totalGrade, aggregate) {
       this.obj = obj;
       this.array = array;
       this.country = country;
       this.totalGrade = totalGrade;
+      this.aggregate = aggregate != null ? aggregate : false;
       this.grades = [];
       this.centerX = this.obj.width / 2;
       this.centerY = this.obj.height / 2;
       this.range = this.obj.width / 17;
+      this.fontFamily = 'Arial';
+      if (this.aggregate) {
+        this.fontSize = 15;
+      } else {
+        this.fontSize = 10;
+      }
     }
     Radar.prototype.draw = function() {
       this.drawLines();
@@ -56,8 +63,8 @@
       }
       mark = this.obj.path(this.path(points));
       return mark.attr({
-        fill: "#E34528",
-        stroke: "#E34528"
+        fill: "#16617F",
+        stroke: "#16617F"
       });
     };
     Radar.prototype.drawText = function() {
@@ -67,7 +74,10 @@
       _results = [];
       for (i = 0, _len = _ref.length; i < _len; i++) {
         a = _ref[i];
-        _results.push(text = this.obj.text(textPolygon.x[i], textPolygon.y[i], a.label));
+        text = this.obj.text(textPolygon.x[i], textPolygon.y[i], a.label);
+        _results.push(text.attr({
+          'font-size': "" + this.fontSize + "px"
+        }));
       }
       return _results;
     };
@@ -77,8 +87,11 @@
     Radar.prototype.drawTotalGrade = function() {
       var text;
       text = this.obj.text(this.centerX * 1.70, this.centerY * 0.30, this.totalGrade);
+      text.attr({
+        fill: "#FCDC28"
+      });
       return text.attr({
-        fill: "#E34528"
+        'font-size': "" + (this.fontSize * 1.2) + "px"
       });
     };
     Radar.prototype.drawFlag = function() {

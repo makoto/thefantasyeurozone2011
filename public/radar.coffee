@@ -7,7 +7,7 @@ class Radar
     @range = @obj.width / 17
     @fontFamily = 'Arial'
     if @aggregate
-      @fontSize = 15
+      @fontSize = 13
     else
       @fontSize = 10
   draw: ->

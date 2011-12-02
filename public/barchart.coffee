@@ -26,6 +26,7 @@ class Barchart
     startY = 20
     w = 20
     x = 80
+    fontSize = 13
     eu = r.rect(x, startY, w, length)
     eu.attr({ stroke:'#16617F', fill:'white'})
     # Eurozone GDP Total
@@ -38,15 +39,18 @@ class Barchart
     bottom =  length * ratio
     eurozone = r.rect(x, top, w, bottom)
     eurozone.attr({fill:'#16617F', stroke:'#16617F'})
+    eurozone.attr({'font-size':"#{fontSize}px"})
+
     console.log('sum', sum)
-    r.text(x - 45, top, "#{sum.toFixed(2)}")
+    eurozone = r.text(x - 45, top, "#{sum.toFixed(2)} - ")
+    eurozone.attr({'font-size':"#{fontSize}px"})
 
     # Max the rest of the world GDP
     x = x + 50
     rtotal = r.rect(x, startY, w, length)
     rtotal.attr({stroke:'#E34528'})
     counter = 0
-    textX = x + 90
+    textX = x + 100
 
     # Each country within the rest of the world GDP
     for c in gdp[1..(gdp.length - 1)]
@@ -56,7 +60,9 @@ class Barchart
       a = r.rect(x, top, w, bottom)  
       s = 1 * (ratio / 1.5)
       a.attr({stroke:'#E34528', fill:"hsb(0,#{s},1)"})
-      r.text(textX, top, "#{gdp[counter][0]} #{@toBillion gdp[counter][1]}") if counter < 4 && counter != 0
+      if counter < 4 && counter != 0
+        rest = r.text(textX, top, "#{gdp[counter][0]} #{@toBillion gdp[counter][1]}")
+        rest.attr({'font-size':"#{fontSize}px"})
       counter++
 
     texts = []
@@ -65,7 +71,8 @@ class Barchart
     for c in [5..13]
       texts.push "#{gdp[c][0]} #{@toBillion gdp[c][1]}"
     texts = texts.join('\n')
-    r.text(textX, length, texts)
+    rest = r.text(textX, length, texts)
+    rest.attr({'font-size':"#{fontSize}px"})
     
   toBillion: (val) ->
     parseFloat( (val / 1000 / 1000 / 1000).toFixed(2))

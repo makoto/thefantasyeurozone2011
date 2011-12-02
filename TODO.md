@@ -13,6 +13,7 @@
 - handle nul (or delete nul including countries)
 
 ## Nice To Have
+- Add GDP comparison with other non european countries
 - european map (or explanation about each key matrics)
 - country flag
 - sorting animation

@@ -7,7 +7,7 @@
   :yields: 4.2
   :debt: 98.4
   :unemployment: 6.7
-  :gdp: 17.4
+  :gdp: 467471523178.808
 - :name: Bulgaria
   :code: BG
   :isEuroZone: n
@@ -16,7 +16,7 @@
   :yields: 5.26
   :debt: 15.2
   :unemployment: 11.9
-  :gdp: 26.8
+  :gdp: 47714490182.803
 - :name: Czech Republic
   :code: CZ
   :isEuroZone: n
@@ -25,7 +25,7 @@
   :yields: 3.14
   :debt: 40.1
   :unemployment: 6.6
-  :gdp: 18.8
+  :gdp: 192151584569.267
 - :name: Denmark
   :code: DK
   :isEuroZone: n
@@ -34,7 +34,7 @@
   :yields: 2.23
   :debt: 47.5
   :unemployment: 7.1
-  :gdp: 13.9
+  :gdp: 310404822126.305
 - :name: Germany
   :code: DE
   :isEuroZone: y
@@ -43,7 +43,7 @@
   :yields: 2.0
   :debt: 81.1
   :unemployment: 5.8
-  :gdp: 9.2
+  :gdp: 3309668874172.19
 - :name: Estonia
   :code: EE
   :isEuroZone: y
@@ -52,7 +52,7 @@
   :yields: 0.0
   :debt: 6.2
   :unemployment: 12.8
-  :gdp: 21.8
+  :gdp: 18673908194.0836
 - :name: Ireland
   :code: IE
   :isEuroZone: y
@@ -61,7 +61,7 @@
   :yields: 8.1
   :debt: 104.6
   :unemployment: 14.2
-  :gdp: 29.5
+  :gdp: 203892188349.669
 - :name: Greece
   :code: GR
   :isEuroZone: y
@@ -70,7 +70,7 @@
   :yields: 18.04
   :debt: 151.9
   :unemployment: 17.6
-  :gdp: 43.4
+  :gdp: 304865067454.305
 - :name: Spain
   :code: ES
   :isEuroZone: y
@@ -79,7 +79,7 @@
   :yields: 5.26
   :debt: 65.2
   :unemployment: 22.6
-  :gdp: 48.0
+  :gdp: 1407405298013.24
 - :name: France
   :code: FR
   :isEuroZone: y
@@ -88,7 +88,7 @@
   :yields: 2.99
   :debt: 86.1
   :unemployment: 9.9
-  :gdp: 24.0
+  :gdp: 2560002000000.0
 - :name: Italy
   :code: IT
   :isEuroZone: y
@@ -97,7 +97,7 @@
   :yields: 5.97
   :debt: 121.4
   :unemployment: 8.3
-  :gdp: 29.3
+  :gdp: 2051412153369.54
 - :name: Cyprus
   :code: CY
   :isEuroZone: y
@@ -106,7 +106,7 @@
   :yields: 7.0
   :debt: 66.8
   :unemployment: 7.8
-  :gdp: 22.6
+  :gdp: 25039094267.1395
 - :name: Latvia
   :code: LV
   :isEuroZone: n
@@ -115,7 +115,7 @@
   :yields: 5.62
   :debt: 45.2
   :unemployment: 16.1
-  :gdp: 29.7
+  :gdp: 24009680459.9868
 - :name: Lithuania
   :code: LT
   :isEuroZone: n
@@ -124,7 +124,7 @@
   :yields: 5.05
   :debt: 37.9
   :unemployment: 15.5
-  :gdp: 32.7
+  :gdp: 36306384146.1075
 - :name: Luxembourg
   :code: LU
   :isEuroZone: y
@@ -133,7 +133,7 @@
   :yields: 2.37
   :debt: 18.7
   :unemployment: 4.8
-  :gdp: 14.7
+  :gdp: 55095629139.0728
 - :name: Hungary
   :code: HU
   :isEuroZone: n
@@ -142,7 +142,7 @@
   :yields: 7.88
   :debt: 76.8
   :unemployment: 9.9
-  :gdp: 23.1
+  :gdp: 130418835184.103
 - :name: Malta
   :code: MT
   :isEuroZone: y
@@ -151,7 +151,7 @@
   :yields: 4.26
   :debt: 71.6
   :unemployment: 6.6
-  :gdp: 15.3
+  :gdp: 7987432157.06315
 - :name: Netherlands
   :code: NL
   :isEuroZone: y
@@ -160,7 +160,7 @@
   :yields: 2.46
   :debt: 63.8
   :unemployment: 4.5
-  :gdp: 8.0
+  :gdp: 783413245033.112
 - :name: Austria
   :code: AT
   :isEuroZone: y
@@ -169,7 +169,7 @@
   :yields: 2.92
   :debt: 72.5
   :unemployment: 3.9
-  :gdp: 7.1
+  :gdp: 376162107600.0
 - :name: Poland
   :code: PL
   :isEuroZone: n
@@ -178,7 +178,7 @@
   :yields: 5.71
   :debt: 56.0
   :unemployment: 9.4
-  :gdp: 23.8
+  :gdp: 468585140961.857
 - :name: Portugal
   :code: PT
   :isEuroZone: y
@@ -187,7 +187,7 @@
   :yields: 11.72
   :debt: 106.3
   :unemployment: 12.5
-  :gdp: 27.1
+  :gdp: 228538145695.364
 - :name: Romania
   :code: RO
   :isEuroZone: n
@@ -196,7 +196,7 @@
   :yields: 7.48
   :debt: 34.3
   :unemployment: 7.5
-  :gdp: 22.8
+  :gdp: 161623662680.931
 - :name: Slovenia
   :code: SI
   :isEuroZone: y
@@ -205,7 +205,7 @@
   :yields: 5.16
   :debt: 44.4
   :unemployment: 8.0
-  :gdp: 13.4
+  :gdp: 47762955727.1523
 - :name: Slovakia
   :code: SK
   :isEuroZone: y
@@ -214,7 +214,7 @@
   :yields: 4.33
   :debt: 42.5
   :unemployment: 13.5
-  :gdp: 30.7
+  :gdp: 0
 - :name: Finland
   :code: FI
   :isEuroZone: y
@@ -223,7 +223,7 @@
   :yields: 2.51
   :debt: 45.3
   :unemployment: 7.8
-  :gdp: 20.4
+  :gdp: 238801324503.311
 - :name: Sweden
   :code: SE
   :isEuroZone: n
@@ -232,7 +232,7 @@
   :yields: 1.9
   :debt: 36.8
   :unemployment: 7.2
-  :gdp: 22.1
+  :gdp: 458003597858.405
 - :name: United Kingdom
   :code: GB
   :isEuroZone: n
@@ -241,7 +241,7 @@
   :yields: 2.52
   :debt: 80.1
   :unemployment: 8.1
-  :gdp: 21.2
+  :gdp: 2246079096749.22
 - :name: Norway
   :code: "NO"
   :isEuroZone: n
@@ -250,4 +250,4 @@
   :yields: 0.0
   :debt: 42.3
   :unemployment: 3.2
-  :gdp: 8.2
+  :gdp: 414461767544.464

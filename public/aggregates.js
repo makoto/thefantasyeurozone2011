@@ -41,21 +41,21 @@
       new Radar(Raphael('aggregates', 330, 330), [
         {
           score: aggregate.deficitGrade,
-          label: "Deficit / GDP " + aggregate.deficit + "%"
+          label: "Deficit / GDP\n " + aggregate.deficit + "%"
         }, {
           score: aggregate.yieldGrade,
-          label: "10 yr bond yield " + aggregate.yield + "%"
+          label: "10 yr bond yield\n " + aggregate.yield + "%"
         }, {
           score: aggregate.debtGrade,
-          label: "Debt / GDP " + aggregate.debt + "%"
+          label: "Debt / GDP\n " + aggregate.debt + "%"
         }, {
           score: aggregate.unemploymentGrade,
-          label: "Enemployment " + aggregate.unemployment + "%"
+          label: "Enemployment\n " + aggregate.unemployment + "%"
         }, {
           score: aggregate.gdpGrade,
-          label: "GDP " + aggregate.gdp + "%"
+          label: "GDP\n " + aggregate.gdp + "%"
         }
-      ], '', "Total Score: " + total).draw();
+      ], '', "Total Score\n " + total, true).draw();
     }
     return Aggregates;
   })();

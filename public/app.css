@@ -7,7 +7,7 @@ div {
 
 h1{
   border: 2px solid #FCDC28;
-  width: 420px;
+  width: 500px;
   background-color: #16617F;
   color: white;
   text-align: center;
@@ -42,7 +42,7 @@ h1 span.star{
   width:100%;
   display: inline-block;
   background-color: #67A816;
-  border: 1px solid white;
+  border: 2px solid white;
 }
 
 #middle #left{
@@ -61,6 +61,21 @@ h1 span.star{
 #middle #right{
   padding: 0px 5px;
   float: left;
+}
+#middle ul{
+  padding-left: 20px;
+}
+#middle li{
+  padding: 2px 0px;
+  list-style-type: none;  
+}
+
+#middle li a{
+  padding:5px;
+}
+
+#middle li a.selected{
+  background-color:#528413;
 }
 
 #footer{

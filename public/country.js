@@ -7,7 +7,7 @@
         val = opts[key];
         this[key] = val;
       }
-      this.gdp = parseFloat((this.gdp / 1000 / 1000).toFixed(2));
+      this.gdp = parseFloat((this.gdp / 1000 / 1000 / 1000).toFixed(2));
     }
     Country.prototype.totalGrade = function() {
       var g, total, _i, _len, _ref;

@@ -38,7 +38,7 @@
       }
       total = aggregate.debtGrade + aggregate.deficitGrade + aggregate.yieldsGrade + aggregate.unemploymentGrade + aggregate.gdpGrade;
       $("#aggregates").empty();
-      new Radar(Raphael('aggregates', 330, 330), [
+      new Radar(Raphael('aggregates', 300, 300), [
         {
           score: aggregate.gdpGrade,
           label: "GDP\n " + aggregate.gdp + " \n USD (Billion)"

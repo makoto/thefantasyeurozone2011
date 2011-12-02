@@ -4,7 +4,7 @@ class Country
     for key,val of opts
      @[key] = val
 
-    @gdp =  parseFloat( (@gdp / 1000 / 1000).toFixed(2))
+    @gdp =  parseFloat( (@gdp / 1000 / 1000 / 1000).toFixed(2))
 
   totalGrade: ->
     total = 0

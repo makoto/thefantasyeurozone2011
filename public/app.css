@@ -53,11 +53,19 @@ h1 span.star{
   float: left;
 }
 
+#middle .column{
+  display: inline-table;
+}
+
 #middle #main{
   width:40%;
   float: left;
   border-right: 1px solid white;
   border-left: 1px solid white;
+}
+
+#middle .comparison{
+  float: right;
 }
 
 #middle #right{

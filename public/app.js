@@ -1,6 +1,6 @@
 (function() {
   $(document).ready(function() {
-    var c, data, gdp, _i, _len;
+    var c, data, _i, _len;
     data = [
       {
         "name": "Belgium",
@@ -490,10 +490,8 @@
     window.counties.refresh();
     Aggregate.load(Country.filterBy('current'));
     new Aggregates();
-    new Categories({
+    return new Categories({
       el: $('.categories')
     });
-    gdp = [['EU', 16250328209821.20], ['E Asia & P', 16219266890205.30], ['N America', 16162456051801.20], ['USA', 14582400000000.00], ['Euro', 12174523489431.70], ['China', 5878629246676.52], ['Japan', 5497812568085.79], ['S&M America', 5181851228628.24], ['Brazil', 2087889553821.68], ['Arab World', 1908954573177.62], ['India', 1729010242153.78], ['Russian Fed', 1479819314058.23], ['Korea Rep.', 1014483158313.58], ['Switzerland', 523772140978.64]];
-    return (new Barchart(gdp)).draw();
   });
 }).call(this);

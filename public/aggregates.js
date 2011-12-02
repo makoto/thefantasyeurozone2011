@@ -53,9 +53,11 @@
           label: "Debt / GDP\n " + aggregate.debt + "%"
         }, {
           score: aggregate.unemploymentGrade,
-          label: "Enemployment\n " + aggregate.unemployment + "%"
+          label: "Unemployment\n " + aggregate.unemployment + "%"
         }
       ], '', "Total Score\n " + total, true).draw();
+      $('#comparison').empty();
+      (new Barchart()).draw();
     }
     return Aggregates;
   })();

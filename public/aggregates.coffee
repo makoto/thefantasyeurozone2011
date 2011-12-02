@@ -21,7 +21,11 @@ class Aggregates extends Spine.Controller
       {score:aggregate.deficitGrade, label:"Deficit / GDP\n #{aggregate.deficit}%"}
       {score:aggregate.yieldsGrade,   label:"10 yr bond yield\n #{aggregate.yields}%"}
       {score:aggregate.debtGrade,    label:"Debt / GDP\n #{aggregate.debt}%"}
-      {score:aggregate.unemploymentGrade, label:"Enemployment\n #{aggregate.unemployment}%"}
+      {score:aggregate.unemploymentGrade, label:"Unemployment\n #{aggregate.unemployment}%"}
     ], '', "Total Score\n #{total}", true ).draw()
 
+    # Drawing Barchart
+    $('#comparison').empty()
+    (new Barchart()).draw()
+    
 window.Aggregates = Aggregates  

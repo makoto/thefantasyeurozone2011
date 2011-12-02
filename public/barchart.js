@@ -2,7 +2,7 @@
   var Barchart;
   Barchart = (function() {
     function Barchart(gdp) {
-      this.gdp = [['EU', 16250328209821.20, "r"], ['E Asia & Pacific', 16219266890205.30, "r"], ['N America', 16162456051801.20, "r"], ['USA', 14582400000000.00, "c"], ['China', 5878629246676.52, "c"], ['Japan', 5497812568085.79, "c"], ['S America & Caribbean', 5181851228628.24, "r"], ['Brazil', 2087889553821.68, "c"], ['Arab World', 1908954573177.62, "r"], ['India', 1729010242153.78, "c"], ['Russia', 1479819314058.23, "c"], ['S Korea.', 1014483158313.58, "c"], ['Switzerland', 523772140978.64, "c"]];
+      this.gdp = [['EU', 16250328209821.20, "r"], ['E Asia & Pacific', 16219266890205.30, "r"], ['N America', 16162456051801.20, "r"], ['USA', 14582400000000.00, "c"], ['China', 5878629246676.52, "c"], ['Japan', 5497812568085.79, "c"], ['S America & Caribbean', 5181851228628.24, "r"], ['Brazil', 2087889553821.68, "c"], ['Arab World', 1908954573177.62, "r"], ['India', 1729010242153.78, "c"], ['Russia', 1479819314058.23, "c"], ['S Korea', 1014483158313.58, "c"], ['Switzerland', 523772140978.64, "c"]];
     }
     Barchart.prototype.draw = function() {
       var a, bottom, c, counter, currentPos, eu, eurozone, fontSize, gdp, length, prevPos, r, ratio, rest, rtotal, s, startY, sum, textX, texts, top, w, x, _i, _j, _len, _len2, _ref, _ref2;

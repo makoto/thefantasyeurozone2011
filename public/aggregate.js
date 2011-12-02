@@ -19,7 +19,6 @@
         }
         return _results;
       }).call(this)).length !== 0) {
-        console.log("deleting");
         return this.records = (function() {
           var _i, _len, _ref, _results;
           _ref = this.records;
@@ -33,7 +32,6 @@
           return _results;
         }).call(this);
       } else {
-        console.log("adding");
         return this.records.push(country);
       }
     };

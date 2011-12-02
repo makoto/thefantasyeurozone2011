@@ -4,7 +4,8 @@ class Countries extends Spine.Controller
 
   constructor: (opts) ->
     super
-    type = (opts && opts.type) || "current"
+
+  refresh: (type ="current") ->
     # Sort
     countries = Country.sortBy(type)
     $('#countries').empty()

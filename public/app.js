@@ -6,9 +6,10 @@
       i = csv[_i];
       Country.add(new Country(i));
     }
-    new Countries({
+    window.counties = new Countries({
       el: $('#countries')
     });
+    window.counties.refresh();
     Aggregate.load(Country.filterBy('current'));
     new Aggregates();
     return new Categories({

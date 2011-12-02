@@ -9,8 +9,9 @@ class Categories extends Spine.Controller
   click: (event) ->
     type = event.target.id
     Aggregate.load Country.filterBy(type)
-    new Aggregates(type)
-    new Countries(el:$('#countries'), type:type)
+    new Aggregates()
+    window.counties.refresh()
+
     $('.categories a').removeClass('selected')
     $(event.target).addClass('selected')
 

@@ -14,9 +14,13 @@
       "click .country": 'click'
     };
     function Countries(opts) {
-      var c, countries, country, type, _i, _j, _len, _len2, _ref;
       Countries.__super__.constructor.apply(this, arguments);
-      type = (opts && opts.type) || "current";
+    }
+    Countries.prototype.refresh = function(type) {
+      var c, countries, country, _i, _j, _len, _len2, _ref, _results;
+      if (type == null) {
+        type = "current";
+      }
       countries = Country.sortBy(type);
       $('#countries').empty();
       for (_i = 0, _len = countries.length; _i < _len; _i++) {
@@ -42,11 +46,13 @@
         ], c.code, c.totalGrade()).draw();
       }
       _ref = Country.filterBy(type);
+      _results = [];
       for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
         country = _ref[_j];
-        $("#countries span#" + country.code).addClass('active');
+        _results.push($("#countries span#" + country.code).addClass('active'));
       }
-    }
+      return _results;
+    };
     Countries.prototype.click = function(event) {
       var country;
       country = $(event.target).parents('.country')[0];

@@ -17,3 +17,6 @@ This visualisation is an entry to [Challenges Are Beautiful: visualise the econo
 - raphael = for svg data viz
 - heroku = for hosting
 
+## Inspiration
+
+- [Fantasy Football](http://fantasy.premierleague.com/)

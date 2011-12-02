@@ -38,24 +38,24 @@
       }
       total = aggregate.debtGrade + aggregate.deficitGrade + aggregate.yieldsGrade + aggregate.unemploymentGrade + aggregate.gdpGrade;
       $("#aggregates").empty();
-      new Radar(Raphael('aggregates', 300, 300), [
+      new Radar(Raphael('aggregates', 310, 300), [
         {
           score: aggregate.gdpGrade,
-          label: "GDP\n " + aggregate.gdp + " \n USD (Billion)"
+          label: "GDP (USD, bil)\n" + aggregate.gdp + "(" + aggregate.gdpGrade + ")\n"
         }, {
           score: aggregate.deficitGrade,
-          label: "Deficit / GDP\n " + aggregate.deficit + "%"
+          label: "Deficit / GDP\n" + aggregate.deficit + "%(" + aggregate.deficitGrade + ")"
         }, {
           score: aggregate.yieldsGrade,
-          label: "10 yr bond yield\n " + aggregate.yields + "%"
+          label: "10 yr bond yield\n " + aggregate.yields + "%(" + aggregate.yieldsGrade + ")"
         }, {
           score: aggregate.debtGrade,
-          label: "Debt / GDP\n " + aggregate.debt + "%"
+          label: "Debt / GDP\n " + aggregate.debt + "%(" + aggregate.debtGrade + ")"
         }, {
           score: aggregate.unemploymentGrade,
-          label: "Unemployment\n " + aggregate.unemployment + "%"
+          label: "Unemployment\n " + aggregate.unemployment + "%" + aggregate.unemploymentGrade + "(" + aggregate.unemploymentGrade + ")"
         }
-      ], '', "Total Score\n " + total, true).draw();
+      ], '', "Total Grade\n (" + total + ")", true).draw();
       $('#comparison').empty();
       (new Barchart()).draw();
     }

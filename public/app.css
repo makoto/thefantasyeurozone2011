@@ -41,7 +41,7 @@ h1 span.star{
 }
 
 #middle{
-  width: 90%;
+  width: 99%;
   padding: 0px 5px;
   margin-right: 3px;
   display: inline-block;
@@ -97,6 +97,7 @@ h1 span.star{
 }
 
 #footer{
+  width: 99%;
 /*  border-top: 1px solid white;*/
 }
 

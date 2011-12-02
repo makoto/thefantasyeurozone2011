@@ -5,7 +5,7 @@
       this.gdp = [['EU', 16250328209821.20, "r"], ['E Asia & Pacific', 16219266890205.30, "r"], ['N America', 16162456051801.20, "r"], ['USA', 14582400000000.00, "c"], ['China', 5878629246676.52, "c"], ['Japan', 5497812568085.79, "c"], ['S America & Caribbean', 5181851228628.24, "r"], ['Brazil', 2087889553821.68, "c"], ['Arab World', 1908954573177.62, "r"], ['India', 1729010242153.78, "c"], ['Russia', 1479819314058.23, "c"], ['S Korea', 1014483158313.58, "c"], ['Switzerland', 523772140978.64, "c"]];
     }
     Barchart.prototype.draw = function() {
-      var a, bottom, c, counter, currentPos, eu, eurozone, fontSize, gdp, length, prevPos, r, ratio, rest, rtotal, s, startY, sum, textX, texts, top, w, x, _i, _j, _len, _len2, _ref, _ref2;
+      var a, anchor, bottom, c, counter, currentPos, eu, eurozone, fontSize, gdp, length, prevPos, r, ratio, rest, rtotal, s, startY, sum, textX, texts, top, w, x, _i, _j, _len, _len2, _ref, _ref2;
       gdp = this.gdp;
       r = Raphael('comparison', 500, 300);
       length = 200;
@@ -40,7 +40,7 @@
       eurozone.attr({
         'font-size': "" + fontSize + "px"
       });
-      x = x + 150;
+      x = x + 250;
       rtotal = r.rect(x, startY, w, length);
       rtotal.attr({
         stroke: '#E34528'
@@ -60,9 +60,11 @@
           fill: "hsb(0," + s + ",1)"
         });
         if (c[2] === "c") {
-          textX = x - 50;
+          textX = x + 30;
+          anchor = "start";
         } else {
-          textX = x + 130;
+          textX = x - 10;
+          anchor = "end";
         }
         console.log("ddd", c[0], c[2], textX);
         currentPos = top;
@@ -75,7 +77,8 @@
         }
         rest = r.text(textX, currentPos, "" + gdp[counter][0] + " " + (this.toBillion(gdp[counter][1])));
         rest.attr({
-          'font-size': "" + fontSize + "px"
+          'font-size': "" + fontSize + "px",
+          'text-anchor': anchor
         });
         counter++;
         prevPos = currentPos;

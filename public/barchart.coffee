@@ -44,7 +44,7 @@ class Barchart
     eurozone.attr({'font-size':"#{fontSize}px"})
 
     # Max the rest of the world GDP
-    x = x + 150
+    x = x + 250
     rtotal = r.rect(x, startY, w, length)
     rtotal.attr({stroke:'#E34528'})
     counter = 1
@@ -59,9 +59,11 @@ class Barchart
       s = 1 * (ratio / 1.5)
       a.attr({stroke:'#E34528', fill:"hsb(0,#{s},1)"})
       if c[2] == "c"
-        textX = x - 50
+        textX = x + 30
+        anchor = "start"
       else
-        textX = x + 130
+        textX = x - 10
+        anchor = "end"
       console.log("ddd", c[0], c[2], textX)
 
       # if counter < 4 && counter != 0
@@ -75,7 +77,7 @@ class Barchart
         console.log('not overrapping')
       
       rest = r.text(textX, currentPos, "#{gdp[counter][0]} #{@toBillion gdp[counter][1]}")
-      rest.attr({'font-size':"#{fontSize}px"})
+      rest.attr({'font-size':"#{fontSize}px", 'text-anchor':anchor})
       counter++
       prevPos = currentPos
 

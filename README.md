@@ -13,4 +13,7 @@ This visualisation is an entry to [Challenges Are Beautiful: visualise the econo
 - ruby = for converting data 
 - coffeescript = for tiding up javascript
 - spine.js = for adding a structure
+- node.js = for serving a site
 - raphael = for svg data viz
+- heroku = for hosting
+

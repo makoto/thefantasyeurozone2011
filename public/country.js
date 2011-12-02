@@ -53,23 +53,23 @@
           });
         case "deficit":
           return this.all().sort(function(a, b) {
-            return parseFloat(a.deficit) - parseFloat(b.deficit);
+            return b.deficit - a.deficit;
           });
         case "yield":
           return this.all().sort(function(a, b) {
-            return parseFloat(a.yields) - parseFloat(b.yields);
+            return a.yields - b.yields;
           });
         case "debt":
           return this.all().sort(function(a, b) {
-            return parseFloat(a.debt) - parseFloat(b.debt);
+            return a.debt - b.debt;
           });
         case "unemployment":
           return this.all().sort(function(a, b) {
-            return parseFloat(a.unemployment) - parseFloat(b.unemployment);
+            return a.unemployment - b.unemployment;
           });
         case "gdp":
           return this.all().sort(function(a, b) {
-            return parseFloat(a.gdp) - parseFloat(b.gdp);
+            return b.gdp - a.gdp;
           });
         case "best":
           return this.all().sort(function(a, b) {

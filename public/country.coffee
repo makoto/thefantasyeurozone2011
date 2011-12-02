@@ -22,15 +22,15 @@ class Country
       when "original"
         @all().sort (a,b) -> b.isOriginalEuroZone.localeCompare(a.isOriginalEuroZone)
       when "deficit"
-        @all().sort (a,b) -> parseFloat(a.deficit) - parseFloat(b.deficit)
+        @all().sort (a,b) -> b.deficit - a.deficit
       when "yield"
-        @all().sort (a,b) -> parseFloat(a.yields) - parseFloat(b.yields)
+        @all().sort (a,b) -> a.yields - b.yields
       when "debt"
-        @all().sort (a,b) -> parseFloat(a.debt) - parseFloat(b.debt)
+        @all().sort (a,b) -> a.debt - b.debt
       when "unemployment"
-        @all().sort (a,b) -> parseFloat(a.unemployment) - parseFloat(b.unemployment)
+        @all().sort (a,b) -> a.unemployment - b.unemployment
       when "gdp"
-        @all().sort (a,b) -> parseFloat(a.gdp) - parseFloat(b.gdp)
+        @all().sort (a,b) -> b.gdp - a.gdp
       when "best"
         @all().sort (a,b) -> b.totalGrade() - a.totalGrade()
       when "worst"

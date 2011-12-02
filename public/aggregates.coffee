@@ -17,11 +17,11 @@ class Aggregates extends Spine.Controller
     # Drawing Aggregates
     $("#aggregates").empty()
     new Radar(Raphael('aggregates', 330, 330)  , [
-      {score:aggregate.deficitGrade, label:"Deficit / GDP\n #{aggregate.deficit}%"},
-      {score:aggregate.yieldsGrade,   label:"10 yr bond yield\n #{aggregate.yields}%"},
-      {score:aggregate.debtGrade,    label:"Debt / GDP\n #{aggregate.debt}%"},
-      {score:aggregate.unemploymentGrade, label:"Enemployment\n #{aggregate.unemployment}%"},
       {score:aggregate.gdpGrade,     label:"GDP\n #{aggregate.gdp} \n USD (Billion)"}
+      {score:aggregate.deficitGrade, label:"Deficit / GDP\n #{aggregate.deficit}%"}
+      {score:aggregate.yieldsGrade,   label:"10 yr bond yield\n #{aggregate.yields}%"}
+      {score:aggregate.debtGrade,    label:"Debt / GDP\n #{aggregate.debt}%"}
+      {score:aggregate.unemploymentGrade, label:"Enemployment\n #{aggregate.unemployment}%"}
     ], '', "Total Score\n #{total}", true ).draw()
 
 window.Aggregates = Aggregates  

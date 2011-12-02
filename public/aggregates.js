@@ -40,6 +40,9 @@
       $("#aggregates").empty();
       new Radar(Raphael('aggregates', 330, 330), [
         {
+          score: aggregate.gdpGrade,
+          label: "GDP\n " + aggregate.gdp + " \n USD (Billion)"
+        }, {
           score: aggregate.deficitGrade,
           label: "Deficit / GDP\n " + aggregate.deficit + "%"
         }, {
@@ -51,9 +54,6 @@
         }, {
           score: aggregate.unemploymentGrade,
           label: "Enemployment\n " + aggregate.unemployment + "%"
-        }, {
-          score: aggregate.gdpGrade,
-          label: "GDP\n " + aggregate.gdp + " \n USD (Billion)"
         }
       ], '', "Total Score\n " + total, true).draw();
     }

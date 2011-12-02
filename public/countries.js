@@ -28,6 +28,9 @@
         $('#countries').append("<span title='" + c.name + "' id='" + c.code + "' class='country'></span>");
         new Radar(Raphael(c.code, 100, 100), [
           {
+            score: c.gdpGrade,
+            label: c.gdp
+          }, {
             score: c.deficitGrade,
             label: c.deficit
           }, {
@@ -39,9 +42,6 @@
           }, {
             score: c.unemploymentGrade,
             label: c.unemployment
-          }, {
-            score: c.gdpGrade,
-            label: c.gdp
           }
         ], c.code, c.totalGrade()).draw();
       }

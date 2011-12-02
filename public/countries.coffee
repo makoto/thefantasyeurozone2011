@@ -18,11 +18,11 @@ class Countries extends Spine.Controller
       new Radar(
         Raphael(c.code, 100, 100)
         [
-          {score:c.deficitGrade, label:c.deficit},
-          {score:c.yieldsGrade,   label:c.yields},
-          {score:c.debtGrade,    label:c.debt},
-          {score:c.unemploymentGrade, label:c.unemployment},
           {score:c.gdpGrade, label:c.gdp}
+          {score:c.deficitGrade, label:c.deficit}
+          {score:c.yieldsGrade,   label:c.yields}
+          {score:c.debtGrade,    label:c.debt}
+          {score:c.unemploymentGrade, label:c.unemployment}
         ]
         c.code
         c.totalGrade()

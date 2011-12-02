@@ -31,8 +31,8 @@
             score: c.deficitGrade,
             label: c.deficit
           }, {
-            score: c.yieldGrade,
-            label: c.yield
+            score: c.yieldsGrade,
+            label: c.yields
           }, {
             score: c.debtGrade,
             label: c.debt

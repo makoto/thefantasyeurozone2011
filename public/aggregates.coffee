@@ -12,16 +12,16 @@ class Aggregates extends Spine.Controller
     for attr of aggregate
       aggregate[attr] = Math.round (aggregate[attr] / (c for c in Aggregate.all()).length)
 
-    total = aggregate.debtGrade + aggregate.deficitGrade + aggregate.yieldGrade + aggregate.unemploymentGrade + aggregate.gdpGrade
+    total = aggregate.debtGrade + aggregate.deficitGrade + aggregate.yieldsGrade + aggregate.unemploymentGrade + aggregate.gdpGrade
 
     # Drawing Aggregates
     $("#aggregates").empty()
     new Radar(Raphael('aggregates', 330, 330)  , [
       {score:aggregate.deficitGrade, label:"Deficit / GDP\n #{aggregate.deficit}%"},
-      {score:aggregate.yieldGrade,   label:"10 yr bond yield\n #{aggregate.yield}%"},
+      {score:aggregate.yieldsGrade,   label:"10 yr bond yield\n #{aggregate.yields}%"},
       {score:aggregate.debtGrade,    label:"Debt / GDP\n #{aggregate.debt}%"},
       {score:aggregate.unemploymentGrade, label:"Enemployment\n #{aggregate.unemployment}%"},
-      {score:aggregate.gdpGrade,     label:"GDP\n #{aggregate.gdp}%"}
+      {score:aggregate.gdpGrade,     label:"GDP\n #{aggregate.gdp} \n USD (Billion)"}
     ], '', "Total Score\n #{total}", true ).draw()
 
 window.Aggregates = Aggregates  

@@ -1,11 +1,14 @@
 class Country
 
-  constructor: (array) ->
-    [@name, @code, @isEuroZone, @deficit, @yield, @debt, @unemployment, @gdp, @deficitGrade, @debtGrade, @yieldGrade, @unemploymentGrade, @gdpGrade] = array     
+  constructor: (opts) ->
+    for key,val of opts
+     @[key] = val
+
+    @gdp =  parseFloat( (@gdp / 1000 / 1000).toFixed(2))
 
   totalGrade: ->
     total = 0
-    total+=g for g in [@deficitGrade, @yieldGrade, @debtGrade, @unemploymentGrade, @gdpGrade]
+    total+=g for g in [@deficitGrade, @yieldsGrade, @debtGrade, @unemploymentGrade, @gdpGrade]
     total
 
   @all: (id) -> @records
@@ -21,7 +24,7 @@ class Country
       when "deficit"
         @all().sort (a,b) -> parseFloat(a.deficit) - parseFloat(b.deficit)
       when "yield"
-        @all().sort (a,b) -> parseFloat(a.yield) - parseFloat(b.yield)
+        @all().sort (a,b) -> parseFloat(a.yields) - parseFloat(b.yields)
       when "debt"
         @all().sort (a,b) -> parseFloat(a.debt) - parseFloat(b.debt)
       when "unemployment"

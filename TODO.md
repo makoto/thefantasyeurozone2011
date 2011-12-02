@@ -1,6 +1,4 @@
 ## Must Have
-- Add 12 countries
-- Add gdp
 - add "About" page
 - add "Making Of..." page
 - add "Tweet this"/ "Share this" page

@@ -1,13 +1,18 @@
 (function() {
   var Country;
   Country = (function() {
-    function Country(array) {
-      this.name = array[0], this.code = array[1], this.isEuroZone = array[2], this.deficit = array[3], this.yield = array[4], this.debt = array[5], this.unemployment = array[6], this.gdp = array[7], this.deficitGrade = array[8], this.debtGrade = array[9], this.yieldGrade = array[10], this.unemploymentGrade = array[11], this.gdpGrade = array[12];
+    function Country(opts) {
+      var key, val;
+      for (key in opts) {
+        val = opts[key];
+        this[key] = val;
+      }
+      this.gdp = parseFloat((this.gdp / 1000 / 1000).toFixed(2));
     }
     Country.prototype.totalGrade = function() {
       var g, total, _i, _len, _ref;
       total = 0;
-      _ref = [this.deficitGrade, this.yieldGrade, this.debtGrade, this.unemploymentGrade, this.gdpGrade];
+      _ref = [this.deficitGrade, this.yieldsGrade, this.debtGrade, this.unemploymentGrade, this.gdpGrade];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         g = _ref[_i];
         total += g;
@@ -52,7 +57,7 @@
           });
         case "yield":
           return this.all().sort(function(a, b) {
-            return parseFloat(a.yield) - parseFloat(b.yield);
+            return parseFloat(a.yields) - parseFloat(b.yields);
           });
         case "debt":
           return this.all().sort(function(a, b) {

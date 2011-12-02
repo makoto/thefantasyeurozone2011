@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>polygon</title>
+	<title>The Fantasy Eurozone 2011</title>
 	<link href='http://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>  
 	<link rel="stylesheet" href="app.css">  
 	<script type="text/javascript" charset="utf-8" src="./vendor/jquery.js"></script>
@@ -21,9 +21,26 @@
 	<!-- Date: 2011-11-29 -->
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>  
+
   <div id="container">
     <div id="header">
-      <h1> <span class="star">★</span> The <span class="fantasy">Fantasy</span> Eurozone 2011 <span class="star">★</span></h1>
+      <h1> 
+        <span class="star">★</span> The <span class="fantasy">Fantasy</span> Eurozone 2011 <span class="star">★</span>
+      </h1>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="makoto_inoue">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
+      <div class="fb-like" data-href="thefanasyerozone2011.herokuapp.com" data-send="false" data-layout="box_count" data-width="450" data-show-faces="true"></div>
+
+<a href="https://github.com/makoto/thefanasyerozone2011"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>
+
     </div>
     <div id="middle">
       <div id="left">
@@ -36,9 +53,9 @@
           Very simple. Either click "Category" links to sort countries by a category, or click each country at the bottom to select your own fantasy eurozone countries.
         </p>
 
+        <h3>How is this made?</h3>
         <p>
-          Data source -
-          <a href="http://www.guardian.co.uk/news/datablog/2011/nov/07/euro-debt-crisis-data">Guardian datablog</a>
+          Check out the story.
         </p>
 
       </div>
@@ -60,6 +77,10 @@
           <li><a id="worst" href="#">Worst (11)</a></li>
           <li><a id="all" href="#">All (28)</a></li>
         </ul>
+        <p>
+          Data source -
+          <a href="http://www.guardian.co.uk/news/datablog/2011/nov/07/euro-debt-crisis-data">Guardian datablog</a>
+        </p>        
       </div>
     </div>
     
@@ -67,6 +88,7 @@
       <h3>Players(aka Countries)</h3>
       <span id="countries">
       </span>
+      <a href="http://twitter.com/makoto_inoue" >Makoto Inoue</a> © 2011
     </div>
   </div>
 

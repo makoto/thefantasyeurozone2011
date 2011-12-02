@@ -14,6 +14,7 @@ h1{
   -moz-border-radius: 15px;
   border-radius: 15px;
   margin: 5px;
+  float: left;
 }
 h3{
   margin: 5px;
@@ -36,10 +37,11 @@ h1 span.star{
 
 #header{
 /*  border-bottom: 1px solid white;*/
+ float: left;
 }
 #middle{
   padding: 0px 5px;
-  width:100%;
+  margin-right: 3px;
   display: inline-block;
   background-color: #67A816;
   border: 2px solid white;
@@ -47,12 +49,12 @@ h1 span.star{
 
 #middle #left{
   padding: 0px 5px;
-  width:25%;
+  width:30%;
   float: left;
 }
 
 #middle #main{
-  width:50%;
+  width:40%;
   float: left;
   border-right: 1px solid white;
   border-left: 1px solid white;
@@ -62,6 +64,11 @@ h1 span.star{
   padding: 0px 5px;
   float: left;
 }
+
+#right{
+  margin: 5px;
+}
+
 #middle ul{
   padding-left: 20px;
 }

@@ -10,7 +10,7 @@
       this.grades = [];
       this.centerX = this.obj.width / 2;
       this.centerY = this.obj.height / 2;
-      this.range = this.obj.width / 17;
+      this.range = this.obj.width / 25;
       this.fontFamily = 'Arial';
       if (this.aggregate) {
         this.fontSize = 15;
@@ -68,13 +68,19 @@
       });
     };
     Radar.prototype.drawText = function() {
-      var a, i, text, textPolygon, _len, _ref, _results;
-      textPolygon = new Polygon(this.centerX, this.centerY, this.range * 6, 6);
+      var a, i, pol, text, textPolygon, textPolygon2, _len, _ref, _results;
+      textPolygon = new Polygon(this.centerX, this.centerY, this.range * 7, 6);
+      textPolygon2 = new Polygon(this.centerX, this.centerY, this.range * 8, 6);
       _ref = this.array;
       _results = [];
       for (i = 0, _len = _ref.length; i < _len; i++) {
         a = _ref[i];
-        text = this.obj.text(textPolygon.x[i], textPolygon.y[i], a.label);
+        if (i === 1 || i === 4) {
+          pol = textPolygon2;
+        } else {
+          pol = textPolygon;
+        }
+        text = this.obj.text(pol.x[i], pol.y[i], a.label);
         _results.push(text.attr({
           'font-size': "" + this.fontSize + "px"
         }));

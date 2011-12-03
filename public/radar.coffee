@@ -4,7 +4,7 @@ class Radar
     @grades = []
     @centerX = @obj.width / 2
     @centerY = @obj.height / 2
-    @range = @obj.width / 17
+    @range = @obj.width / 25
     @fontFamily = 'Arial'
     if @aggregate
       @fontSize = 15
@@ -43,12 +43,16 @@ class Radar
     mark = @obj.path @path points
     mark.attr({fill: "#16617F", stroke: "#16617F"})
 
-#E34528 red
-  
   drawText: ->
-    textPolygon = new Polygon(@centerX, @centerY, @range * 6, 6);
+    textPolygon = new Polygon(@centerX, @centerY, @range * 7, 6);
+    textPolygon2 = new Polygon(@centerX, @centerY, @range * 9, 6);
     for a, i in @array
-      text = @obj.text textPolygon.x[i], textPolygon.y[i], a.label
+      if i == 1 || i == 4
+        pol = textPolygon2
+      else
+        pol = textPolygon
+        # body...
+      text = @obj.text pol.x[i], pol.y[i], a.label
       text.attr({'font-size':"#{@fontSize}px"})
 
   drawCountryCode: ->
@@ -57,8 +61,6 @@ class Radar
   drawTotalGrade: ->
       text = @obj.text @centerX * 0.30 , @centerY * 0.30, @totalGrade
       text.attr({fill: "#FCDC28"})
-      # text.attr('font-family': @fontFamily)
-      
       text.attr({'font-size':"#{@fontSize * 1.2}px"})
 
   drawFlag: ->

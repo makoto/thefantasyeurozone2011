@@ -16,7 +16,7 @@ class Aggregates extends Spine.Controller
 
     # Drawing Aggregates
     $("#aggregates").empty()
-    new Radar(Raphael('aggregates', 360, 290)  , [
+    new Radar(Raphael('aggregates', 370, 290)  , [
       {score:aggregate.gdpGrade,     label:"a. GDP (USD, bil)\n#{aggregate.gdp}(#{aggregate.gdpGrade})\n"}
       {score:aggregate.deficitGrade, label:"b. Surplus / Deficit\n#{aggregate.deficit}%(#{aggregate.deficitGrade})"}
       {score:aggregate.yieldsGrade,   label:"c. 10 yr bond yield\n #{aggregate.yields}%(#{aggregate.yieldsGrade})"}

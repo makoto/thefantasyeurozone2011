@@ -7,7 +7,7 @@
     Barchart.prototype.draw = function() {
       var a, anchor, bottom, c, counter, currentPos, eu, eurozone, fontSize, gdp, length, prevPos, r, ratio, rest, rtotal, s, startY, sum, textX, texts, top, w, x, _i, _j, _len, _len2, _ref, _ref2;
       gdp = this.gdp;
-      r = Raphael('comparison', 500, 300);
+      r = Raphael('comparison', 500, 290);
       length = 200;
       startY = 0;
       w = 20;

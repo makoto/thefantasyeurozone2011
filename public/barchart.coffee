@@ -20,7 +20,7 @@ class Barchart
   draw: ()->
     # EU GDP Total
     gdp = @gdp
-    r = Raphael('comparison', 500, 300)
+    r = Raphael('comparison', 500, 290)
     length = 200
     startY = 0
     w = 20

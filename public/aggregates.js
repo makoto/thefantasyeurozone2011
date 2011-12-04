@@ -53,7 +53,7 @@
           label: "d. Debt\n " + aggregate.debt + "%(" + aggregate.debtGrade + ")"
         }, {
           score: aggregate.unemploymentGrade,
-          label: "e. Unemployment\n " + aggregate.unemployment + "%" + aggregate.unemploymentGrade + "(" + aggregate.unemploymentGrade + ")"
+          label: "e. Unemployment\n " + aggregate.unemployment + "%(" + aggregate.unemploymentGrade + ")"
         }
       ], '', "Total Score\n (" + total + ")", true).draw();
       $('#comparison').empty();

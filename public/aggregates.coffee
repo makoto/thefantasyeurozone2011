@@ -21,7 +21,7 @@ class Aggregates extends Spine.Controller
       {score:aggregate.deficitGrade, label:"b. Surplus / Deficit\n#{aggregate.deficit}%(#{aggregate.deficitGrade})"}
       {score:aggregate.yieldsGrade,   label:"c. 10 yr bond yield\n #{aggregate.yields}%(#{aggregate.yieldsGrade})"}
       {score:aggregate.debtGrade,    label:"d. Debt\n #{aggregate.debt}%(#{aggregate.debtGrade})"}
-      {score:aggregate.unemploymentGrade, label:"e. Unemployment\n #{aggregate.unemployment}%#{aggregate.unemploymentGrade}(#{aggregate.unemploymentGrade})"}
+      {score:aggregate.unemploymentGrade, label:"e. Unemployment\n #{aggregate.unemployment}%(#{aggregate.unemploymentGrade})"}
     ], '', "Total Score\n (#{total})", true ).draw()
 
     # Drawing Barchart

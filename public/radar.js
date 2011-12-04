@@ -1,16 +1,17 @@
 (function() {
   var Radar;
   Radar = (function() {
-    function Radar(obj, array, country, totalGrade, aggregate) {
+    function Radar(obj, array, country, totalGrade, aggregate, rangeScale) {
       this.obj = obj;
       this.array = array;
       this.country = country;
       this.totalGrade = totalGrade;
       this.aggregate = aggregate != null ? aggregate : false;
+      this.rangeScale = rangeScale != null ? rangeScale : 25;
       this.grades = [];
       this.centerX = this.obj.width / 2;
       this.centerY = this.obj.height / 2;
-      this.range = this.obj.width / 25;
+      this.range = this.obj.width / this.rangeScale;
       this.fontFamily = 'Arial';
       if (this.aggregate) {
         this.fontSize = 15;
@@ -82,13 +83,20 @@
         }
         text = this.obj.text(pol.x[i], pol.y[i], a.label);
         _results.push(text.attr({
-          'font-size': "" + this.fontSize + "px"
+          'font-size': "" + (this.fontSize * 0.9) + "px"
         }));
       }
       return _results;
     };
     Radar.prototype.drawCountryCode = function() {
-      return this.obj.text(this.centerX, this.centerY, this.country);
+      var text;
+      text = this.obj.text(this.centerX, this.centerY, this.country);
+      text.attr({
+        'font-size': "" + this.fontSize + "px"
+      });
+      return text.attr({
+        fill: "#FCDC28"
+      });
     };
     Radar.prototype.drawTotalGrade = function() {
       var text;

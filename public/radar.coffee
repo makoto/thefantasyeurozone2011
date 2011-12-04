@@ -1,10 +1,10 @@
 class Radar
 
-  constructor: (@obj, @array, @country, @totalGrade, @aggregate = false) ->
+  constructor: (@obj, @array, @country, @totalGrade, @aggregate = false, @rangeScale = 25) ->
     @grades = []
     @centerX = @obj.width / 2
     @centerY = @obj.height / 2
-    @range = @obj.width / 25
+    @range = @obj.width / @rangeScale
     @fontFamily = 'Arial'
     if @aggregate
       @fontSize = 15
@@ -45,7 +45,7 @@ class Radar
 
   drawText: ->
     textPolygon = new Polygon(@centerX, @centerY, @range * 7, 6);
-    textPolygon2 = new Polygon(@centerX, @centerY, @range * 9, 6);
+    textPolygon2 = new Polygon(@centerX, @centerY, @range * 8, 6);
     for a, i in @array
       if i == 1 || i == 4
         pol = textPolygon2
@@ -53,10 +53,12 @@ class Radar
         pol = textPolygon
         # body...
       text = @obj.text pol.x[i], pol.y[i], a.label
-      text.attr({'font-size':"#{@fontSize}px"})
+      text.attr({'font-size':"#{@fontSize  * 0.9}px"})
 
   drawCountryCode: ->
-      @obj.text @centerX, @centerY, @country
+      text = @obj.text @centerX, @centerY, @country
+      text.attr({'font-size':"#{@fontSize}px"})
+      text.attr({fill: "#FCDC28"})
 
   drawTotalGrade: ->
       text = @obj.text @centerX * 0.30 , @centerY * 0.30, @totalGrade

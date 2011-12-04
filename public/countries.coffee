@@ -16,7 +16,7 @@ class Countries extends Spine.Controller
       $('#countries').append("<span title='#{c.name}' id='#{c.code}' class='country'></span>")
 
       new Radar(
-        Raphael(c.code, 100, 100)
+        Raphael(c.code, 110, 80)
         [
           {score:c.gdpGrade, label:c.gdp}
           {score:c.deficitGrade, label:c.deficit}
@@ -24,8 +24,10 @@ class Countries extends Spine.Controller
           {score:c.debtGrade,    label:c.debt}
           {score:c.unemploymentGrade, label:c.unemployment}
         ]
-        c.code
         c.totalGrade()
+        c.code
+        false
+        18
       ).draw()
     for country in Country.filterBy(type)
       $("#countries span##{country.code}").addClass('active')

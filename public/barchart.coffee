@@ -22,10 +22,10 @@ class Barchart
     gdp = @gdp
     r = Raphael('comparison', 500, 290)
     length = 200
-    startY = 0
+    startY = 20
     w = 20
     x = 80
-    fontSize = 15
+    fontSize = 15 * 0.9
     eu = r.rect(x, startY, w, length)
     eu.attr({ stroke:'#16617F', fill:'white'})
     # Eurozone GDP Total

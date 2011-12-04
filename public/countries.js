@@ -26,7 +26,7 @@
       for (_i = 0, _len = countries.length; _i < _len; _i++) {
         c = countries[_i];
         $('#countries').append("<span title='" + c.name + "' id='" + c.code + "' class='country'></span>");
-        new Radar(Raphael(c.code, 100, 100), [
+        new Radar(Raphael(c.code, 110, 80), [
           {
             score: c.gdpGrade,
             label: c.gdp
@@ -43,7 +43,7 @@
             score: c.unemploymentGrade,
             label: c.unemployment
           }
-        ], c.code, c.totalGrade()).draw();
+        ], c.totalGrade(), c.code, false, 18).draw();
       }
       _ref = Country.filterBy(type);
       _results = [];

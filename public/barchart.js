@@ -9,9 +9,9 @@
       gdp = this.gdp;
       r = Raphael('comparison', 500, 290);
       length = 200;
-      startY = 20;
+      startY = 30;
       w = 20;
-      x = 80;
+      x = 100;
       fontSize = 15 * 0.9;
       eu = r.rect(x, startY, w, length);
       eu.attr({

@@ -56,7 +56,7 @@ h1 span.star{
 }
 
 #middle .categories{
-  height: 280px;
+  height: 270px;
   margin-top: 42px;
 }
 
@@ -65,10 +65,14 @@ h1 span.star{
   width:70%;
   float: left;
 }
+#middle #aggregates{
+  margin-left: 38px;
+}
+
 
 #middle #notes{
   width: 340px;
-  margin-left: 25px;
+  margin-left: 57px;
 /*  text-align: center;*/
 /*  text-align: justify;*/
 }
@@ -86,6 +90,10 @@ h1 span.star{
   float: left;
 }
 
+.left h3{
+  margin-left: 40px;
+}
+
 .right{
   float: right;
 }
@@ -98,6 +106,15 @@ h1 span.star{
   padding: 2px 0px;
   list-style-type: none;  
 }
+
+#middle li.indicator-header{
+  padding-left:5px;
+}
+
+#middle li.indicator{
+  padding-left:10px;
+}
+
 
 #middle li a{
   padding:5px;
